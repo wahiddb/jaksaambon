@@ -103,13 +103,13 @@
                                       <th>No</th>
                                       <th><center>Nama</center></th>
                                       <th>
-                                        <center>Jabatan</center>
-                                      </th>
-                                      <th>
                                         <center>NIP/NRP</center>
                                       </th>
                                       <th>
                                         <center>Jabatan</center>
+                                      </th>
+                                      <th>
+                                        <center>Bidang</center>
                                       </th>
                                       <th>
                                         <center>Golongan Pangkat</center>

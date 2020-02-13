@@ -8,4 +8,6 @@ class Pembinaan extends CI_Controller {
 	{
 		$this->load->view('/user/_bina.php');
 	}
+
+
 }

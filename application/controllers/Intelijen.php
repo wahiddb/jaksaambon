@@ -8,4 +8,9 @@ class Intelijen extends CI_Controller {
 	{
 		$this->load->view('/user/_intel.php');
 	}
+
+	public function laporan()
+	{
+		$this->load->view('/user/_laporan.php');
+	}
 }

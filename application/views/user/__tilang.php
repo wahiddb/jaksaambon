@@ -64,7 +64,7 @@
                                 <a href="<?= base_url('pidum'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Informasi Perkara Pidana Umum</p>
                                 </a>
-                                <a href="__tilang.html">
+                                <a href="<?= base_url('pidum/tilang'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Informasi Tilang</p>
                                 </a>
                             </div>

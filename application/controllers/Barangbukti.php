@@ -8,4 +8,19 @@ class Barangbukti extends CI_Controller {
 	{
 		$this->load->view('/user/_bb.php');
 	}
+
+	public function dirampas()
+	{
+		$this->load->view('/user/_bb2.php');
+	}
+
+	public function kembali()
+	{
+		$this->load->view('/user/_bb3.php');
+	}
+
+	public function lelang()
+	{
+		$this->load->view('/user/_bb4.php');
+	}
 }

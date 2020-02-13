@@ -64,7 +64,7 @@
                                 <a href="<?= base_url('pemeriksaan'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Pelaporan Pelanggaran Pegawai</p>
                                 </a>
-                                <a href="_laporanpegawai.html">
+                                <a href="<?= base_url('pemeriksaan/laporan'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Perkembangan Laporan</p>
                                 </a>
                             </div>

@@ -8,4 +8,9 @@ class Pemeriksaan extends CI_Controller {
 	{
 		$this->load->view('/user/_periksa.php');
 	}
+
+	public function laporan()
+	{
+		$this->load->view('/user/_laporanpegawai.php');
+	}
 }

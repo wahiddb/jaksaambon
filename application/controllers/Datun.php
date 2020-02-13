@@ -8,4 +8,10 @@ class Datun extends CI_Controller {
 	{
 		$this->load->view('/user/_datun.php');
 	}
+
+
+	public function profil()
+	{
+		$this->load->view('/user/__jaksa.php');
+	}
 }

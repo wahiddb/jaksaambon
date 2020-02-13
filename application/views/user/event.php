@@ -73,7 +73,7 @@
                         </div>
                         <div class="collapse show item-2" role="tabpanel" data-parent="#accordion-1">
                             <div class="card-body">
-                                <a href="event.html">
+                                <a href="<?= base_url('pembinaan'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Kegiatan Bidang Intelijen</p>
                                 </a>
                             </div>

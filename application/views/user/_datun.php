@@ -64,7 +64,7 @@
                                 <a href="<?= base_url('datun'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Permohonan Bantuan Hukum</p>
                                 </a>
-                                <a href="__jaksa.html">
+                                <a href="<?= base_url('datun/profil'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Profil Jaksa Pengacara Negara</p>
                                 </a>
                             </div>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="collapse item-2" role="tabpanel" data-parent="#accordion-1">
                             <div class="card-body">
-                                <a href="_<?= base_url('datun'); ?>">
+                                <a href="<?= base_url('datun'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Kegiatan Bidang Datun</p>
                                 </a>
                             </div>

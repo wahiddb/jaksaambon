@@ -64,10 +64,10 @@
                                 <a href="<?= base_url('barangbukti'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Barang Bukti Dimusnahkan</p>
                                 </a>
-                                <a href="_bb2.html">
+                                <a href="<?= base_url('barangbukti/dirampas'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Barang Bukti Dirampas Negara</p>
                                 </a>
-                                <a href="_bb3.html">
+                                <a href="<?= base_url('barangbukti/kembali'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Barang Bukti Dikembalikan</p>
                                 </a>
                             </div>

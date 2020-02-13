@@ -8,4 +8,9 @@ class Pidum extends CI_Controller {
 	{
 		$this->load->view('/user/_pidum.php');
 	}
+
+	public function tilang()
+	{
+		$this->load->view('/user/__tilang.php');
+	}
 }

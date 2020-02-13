@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - Brand</title>
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/-Team-Rotating-Cards-BS4-.css">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/Animate-Cards-Devices.css">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/gradient-navbar-1.css">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/Footer-Basic.css">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/gradient-navbar.css">
+    <link rel="stylesheet" href="<?= base_url('assets/fonts/font-awesome.min.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/fonts/ionicons.min.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/-Team-Rotating-Cards-BS4-.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/Animate-Cards-Devices.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/gradient-navbar-1.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/Footer-Basic.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/gradient-navbar.css'); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 
@@ -223,27 +223,5 @@
                 </div>
             </div>
         </section>
-        <div class="footer-basic">
-            <footer>
-                <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">Kejaksaan Negeri Ambon</a></li>
-                </ul>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">Rijali No. 9 Kecamatan Sirimau, Kota Ambon</a></li>
-                </ul>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><i class="icon ion-ios-telephone"></i> 0911-352463</li>
-                </ul>
-                <p class="copyright">Kejari Ambon © 2020</p>
-            </footer>
-        </div>
-    </section>
-    <script src="<?= base_url('assets'); ?>/js/jquery.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/js/bs-init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/js/stylish-portfolio.js"></script>
-</body>
-
-</html>
+        <?php 
+        include 'footer.php' ?>

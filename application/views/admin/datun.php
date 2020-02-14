@@ -1,11 +1,3 @@
-<?php $this->load->view("admin/_partials/head"); ?>
-  <!-- /.navbar -->
-  <?php $this->load->view("admin/_partials/navbar"); ?>
-  <!-- Main Sidebar Container -->
-  <?php $this->load->view("admin/_partials/sidebar"); ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -182,5 +174,3 @@
     </div>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
-  <?php $this->load->view("admin/_partials/footer"); ?>

@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-xl"><i class="far fa-plus-square"> Tambah Pegawai Baru</i></button>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalAddPegawai"><i class="far fa-plus-square"> Tambah Pegawai Baru</i></button>
           </div><!-- /.col -->
         </div><!-- /.row -->
         <div class="row">
@@ -61,86 +61,35 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td><center>Dono Kasino</center></td>
-                        <td><center> Jaksa Agung Muda </center></td>
-                        <td><center> 23133232 </center></td>
-                        <td><center> Kabid </center></td>
-                        <td><center> Eselon IV </center></td>
-                        <td><center> S1 </center></td>
-                        <td><center> Semarang </center></td>
-                        <td><center> 09302930293 </center></td>
-                        <td><center>  </center></td>
-                        <td>
-                          <th>
-                            <center>
-                              <button type="button" class="btn btn-warning"><i class="far fa-edit"> Edit</i></button>
-                              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"> Hapus</i></button>
-                            </center>
-                          </th>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td><center>Dono Kasino</center></td>
-                        <td><center> Jaksa Agung Muda </center></td>
-                        <td><center> 23133232 </center></td>
-                        <td><center> Kabid </center></td>
-                        <td><center> Eselon IV </center></td>
-                        <td><center> S1 </center></td>
-                        <td><center> Semarang </center></td>
-                        <td><center> 09302930293 </center></td>
-                        <td><center>  </center></td>
-                        <td>
-                          <th>
-                            <center>
-                              <button type="button" class="btn btn-warning"><i class="far fa-edit"> Edit</i></button>
-                              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"> Hapus</i></button>
-                            </center>
-                          </th>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td><center>Dono Kasino</center></td>
-                        <td><center> Jaksa Agung Muda </center></td>
-                        <td><center> 23133232 </center></td>
-                        <td><center> Kabid </center></td>
-                        <td><center> Eselon IV </center></td>
-                        <td><center> S1 </center></td>
-                        <td><center> Semarang </center></td>
-                        <td><center> 09302930293 </center></td>
-                        <td><center>  </center></td>
-                        <td>
-                          <th>
-                            <center>
-                              <button type="button" class="btn btn-warning"><i class="far fa-edit"> Edit</i></button>
-                              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"> Hapus</i></button>
-                            </center>
-                          </th>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td><center>Dono Kasino</center></td>
-                        <td><center> Jaksa Agung Muda </center></td>
-                        <td><center> 23133232 </center></td>
-                        <td><center> Kabid </center></td>
-                        <td><center> Eselon IV </center></td>
-                        <td><center> S1 </center></td>
-                        <td><center> Semarang </center></td>
-                        <td><center> 09302930293 </center></td>
-                        <td><center>  </center></td>
-                        <td>
-                          <th>
-                            <center>
-                              <button type="button" class="btn btn-warning"><i class="far fa-edit"> Edit</i></button>
-                              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"> Hapus</i></button>
-                            </center>
-                          </th>
-                        </td>
-                      </tr>
+                    <?php
+                        $no = 0;
+                        foreach ($data->result_array() as $a) :
+                            $no++;
+                            $id = $a['id_pegawai'];
+                            $nama = $a['nama'];
+                            $nip = $a['nip'];
+                            $jabatan = $a['jabatan'];
+                            $bidang = $a['bidang'];
+                            $gol = $a['gol'];
+                            $pendidikan = $a['pendidikan'];
+                            $ttl = $a['ttl'];
+                            $phone = $a['phone']; ?>
+                            <tr>
+                                <td style="text-align:center;"><?php echo $no; ?></td>
+                                <td style="text-align:center;"><?php echo $nama; ?></td>
+                                <td style="text-align:center;"><?php echo $nip; ?></td>
+                                <td style="text-align:center;"><?php echo $jabatan; ?></td>
+                                <td style="text-align:center;"><?php echo $bidang; ?></td>
+                                <td style="text-align:center;"><?php echo $gol; ?></td>
+                                <td style="text-align:center;"><?php echo $pendidikan; ?></td>
+                                <td style="text-align:center;"><?php echo $ttl; ?></td>
+                                <td style="text-align:center;"><?php echo $phone; ?></td>
+                                <td style="text-align:center;">
+                                    <a class="btn btn-xs btn-warning" href="#modalAddPegawai<?php echo $id ?>" data-toggle="modal" title="Edit"><span class="far fa-edit"></span> Edit</a>
+                                    <a class="btn btn-xs btn-danger" href="#modalHapusPegawai<?php echo $id ?>" data-toggle="modal" title="Hapus"><span class="far fa-trash-alt"></span> Hapus</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                   </table>
                 </div>
@@ -218,7 +167,88 @@
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
-      <div class="modal fade" id="modal-xl">
+
+<!-- ============ MODAL ADD =============== -->
+      <div class="modal fade" id="modalAddPegawai" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Tambah Data Pegawai</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form class="form-horizontal" method="post" action="<?php echo base_url() . 'admin/admin_pembinaan/add_pegawai' ?>">
+            <div class="modal-body">
+
+              <div class="form-group">
+                <label for="inputName">Nama Pegawai</label>
+                <input type="text" name="nama" class="form-control" placeholder="Nama Pegawai" required>
+              </div>
+
+              <div class="form-group">
+                <label for="inputName">NIP / NIRP</label>
+                <input type="text" name="nip" class="form-control" placeholder="NIP / NIRP" required>
+              </div>
+
+              <div class="form-group">
+                <label for="inputName">Jabatan</label>
+                <input type="text" name="jabatan" class="form-control" placeholder="Jabatan" required>
+              </div>
+
+              <div class="form-group">
+                <label for="inputDescription">Bidang</label>
+                <select class="form-control custom-select" name="bidang" required>
+                  <option selected disabled>Pilih Bidang</option>
+                  <option>Pembinaan</option>
+                  <option>Intelijen</option>
+                  <option>Pidana Umum</option>
+                  <option>Pidana Khusus</option>
+                  <option>Perdata & Tata Usaha</option>
+                  <option>Barang Bukti</option>
+                  <option>Pemeriksa</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputDescription">Golongan Pangkat</label>
+                <select class="form-control custom-select" name="gol">
+                  <option selected disabled>Pilih Golongan</option>
+                  <option>Eselon I</option>
+                  <option>Eselon II</option>
+                  <option>Eselon III</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputName">Pendidikan</label>
+                <input type="text" name="pendidikan" class="form-control" placeholder="Pendidikan Terakhir" required>
+              </div>
+
+              <div class="form-group">
+                <label for="inputName">Tempat / Tanggal Lahir</label>
+                <input type="text" name="ttl" class="form-control" placeholder="Tempat Tanggal Lahir" required>
+              </div>
+
+              <div class="form-group">
+                <label for="inputName">No. Telepon</label>
+                <input type="text" name="phone" class="form-control" placeholder="Nomor HP / Telepon" required>
+              </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+              <button type="submit" class="btn btn-primary">Tambahkan Data</button>
+            </div>
+            </div>
+          </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <!-- ============ MODAL DELETE =============== -->
+      <div class="modal fade" id="modalHapusPegawai">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -230,33 +260,49 @@
             <div class="modal-body">
               <div class="form-group">
                 <label for="inputName">Nama Pegawai</label>
-                <input type="text" id="inputName" class="form-control" value="Nama Pegawai">
+                <input type="text" id="inputName" class="form-control" value="nama_pegawai">
               </div>
               <div class="form-group">
-                <label for="inputDescription">Jabatan</label>
-                <select class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option>Kasubag</option>
-                  <option>Jaksa Agung Muda</option>
-                  <option selected>Kabid</option>
-                </select>
+                <label for="inputName">NIP / NIRP</label>
+                <input type="text" id="inputName" class="form-control" value="nip">
               </div>
               <div class="form-group">
-                <label for="inputStatus">Bidang</label>
+                <label for="inputName">Jabatan</label>
+                <input type="text" id="inputName" class="form-control" value="jabatan">
+              </div>
+              <div class="form-group">
+                <label for="inputDescription">Bidang</label>
                 <select class="form-control custom-select">
-                  <option selected disabled>Select one</option>
+                  <option selected disabled>Pilih Bidang</option>
                   <option>Pembinaan</option>
                   <option>Intelijen</option>
-                  <option selected>Pidana Umum</option>
-                  <option selected>Pidana Khusus</option>
-                  <option selected>Perdata & Tata Usaha</option>
-                  <option selected>Barang Bukti</option>
-                  <option selected>Pemeriksa</option>
+                  <option>Pidana Umum</option>
+                  <option>Pidana Khusus</option>
+                  <option>Perdata & Tata Usaha</option>
+                  <option>Barang Bukti</option>
+                  <option>Pemeriksa</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="inputClientCompany">No. Register</label>
-                <input type="text" id="inputClientCompany" class="form-control" value="No Register">
+                <label for="inputDescription">Golongan Pangkat</label>
+                <select class="form-control custom-select">
+                  <option selected disabled>Pilih Golongan</option>
+                  <option>Eselon I</option>
+                  <option>Eselon II</option>
+                  <option>Eselon III</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="inputName">Pendidikan</label>
+                <input type="text" id="inputName" class="form-control" value="pendidikan">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Tempat / Tanggal Lahir</label>
+                <input type="text" id="inputName" class="form-control" value="ttl">
+              </div>
+              <div class="form-group">
+                <label for="inputName">No. Telepon</label>
+                <input type="text" id="inputName" class="form-control" value="phone">
               </div>
             </div>
             <div class="modal-footer justify-content-between">

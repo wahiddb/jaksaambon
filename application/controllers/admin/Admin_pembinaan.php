@@ -3,54 +3,67 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_pembinaan extends CI_Controller {
 
-    function __construct()
-	{
-		parent::__construct();
-		$this->load->model('m_pegawai');
-    }
-    
-	public function index()
-	{
-        $data ['data'] = $this->m_pegawai->tampil_pegawai();
-		$this->template_admin->load('/admin/template_admin', '/admin/pembinaan', $data);
-		
-    }
-    
-    public function hapus_pegawai()
-	{
-        $id = $this->input->post['id'];
-        $data ['data'] = $this->m_pegawai->tampil_pegawai();
-        $this->m_pegawai->hapus_pegawai($id);
-		
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model("m_pegawai");
+        $this->load->library('form_validation');
     }
 
-    public function edit_pegawai()
-	{
-        $id = $this->input->post['id'];
-        $nama = $this->input->post('nama');
-		$nip = $this->input->post('nip');
-		$jabatan = $this->input->post('jabatan');
-		$bidang = $this->input->post('bidang');
-		$gol = $this->input->post('gol');
-		$pendidikan = $this->input->post('pendidikan');
-		$ttl = $this->input->post('ttl');
-        $phone = $this->input->post('phone');
-        $this->m_pegawai->update_pegawai($id, $nama, $nip, $jabatan, $bidang, $gol, $pendidikan, $ttl, $phone);
+    public function index()
+    {
+		if($this->session->userdata('level')==='1'  || $this->session->userdata('level')==='6'){
+			$data["pegawai"] = $this->m_pegawai->getAll();
+			$this->template_admin->load('/admin/template_admin', '/admin/pembinaan', $data);
 		
+		} else{
+			echo "<script>
+			alert('Access Denied ! ');
+			window.location='".site_url('admin/auth/login')."';
+			</script>";
+		}
+	}
+
+    public function add()
+    {
+        $pegawai = $this->m_pegawai;
+        $validation = $this->form_validation;
+        $validation->set_rules($pegawai->rules());
+
+        if ($validation->run()) {
+            $pegawai->save();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $this->template_admin->load('/admin/template_admin', '/admin/addPembinaan');
     }
 
-    public function add_pegawai()
-	{
-        $nama = $this->input->post('nama');
-		$nip = $this->input->post('nip');
-		$jabatan = $this->input->post('jabatan');
-		$bidang = $this->input->post('bidang');
-		$gol = $this->input->post('gol');
-		$pendidikan = $this->input->post('pendidikan');
-		$ttl = $this->input->post('ttl');
-        $phone = $this->input->post('phone');
-        $this->m_pegawai->add_pegawai($id,$nama,$nip,$jabatan,$bidang,$gol,$pendidikan,$ttl,$phone);
-		redirect('admin/admin_pembinaan');
+    public function edit($id = null)
+    {
+        if (!isset($id)) redirect('admin/admin_pembinaan');
+       
+        $pegawai = $this->m_pegawai;
+        $validation = $this->form_validation;
+        $validation->set_rules($pegawai->rules());
+
+        if ($validation->run()) {
+            $pegawai->update();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $data["pegawai"] = $pegawai->getById($id);
+        if (!$data["pegawai"]) show_404();
+        
+        $this->template_admin->load('/admin/template_admin', '/admin/editPembinaan', $data);
+    }
+
+    public function delete($id=null)
+    {
+        if (!isset($id)) show_404();
+        
+        if ($this->m_pegawai->delete($id)) {
+            redirect(site_url('admin/admin_pembinaan'));
+        }
     }
 
 }

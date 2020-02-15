@@ -1,27 +1,97 @@
 <?php
 class M_pegawai extends CI_Model
 {
+    private $_table = "pegawai";
 
-    function hapus_pegawai($id)
-        {
-            $hsl = $this->db->query("DELETE FROM pegawai where id_pegawai='$id'");
-            return $hsl;
-        }
+    public $id_pegawai;
+    public $nama;
+    public $nip;
+    public $jabatan;
+    public $bidang;
+    public $gol;
+    public $pendidikan;
+    public $ttl;
+    public $phone;
 
-    function update_pegawai($id, $nama, $nip, $jabatan, $bidang, $gol, $pendidikan, $ttl, $phone)
-        {
-            $hsl = $this->db->query("UPDATE pegawai SET nama='$nama',nip='$nip',jabatan='$jabatan',bidang='$bidang',gol='$gol',pendidikan='$pendidikan',ttl=$ttl,phone='$phone' WHERE id_pegawai='$id'");
-            return $hsl;
-        }
+    public function rules()
+    {
+        return [
+            ['field' => 'nama',
+            'label' => 'nama',
+            'rules' => 'required'],
 
-	function tampil_pegawai()
-        {
-            $hsl = $this->db->query("SELECT * FROM pegawai");
-            return $hsl;
-        }
-    function add_pegawai($id,$nama,$nip,$jabatan,$bidang,$gol,$pendidikan,$ttl,$phone)
-        {
-            $hsl = $this->db->query("INSERT INTO pegawai (id_pegawai, nama, nip, jabatan, bidang, gol, pendidikan, ttl, phone) VALUES (DEFAULT,'$nama','$nip','$jabatan','$bidang', '$gol','$pendidikan','$ttl','$phone')");
-            return $hsl;
-        }
+            ['field' => 'nip',
+            'label' => 'nip',
+            'rules' => 'required'],
+            
+            ['field' => 'jabatan',
+            'label' => 'jabatan',
+            'rules' => 'required'],
+
+            ['field' => 'bidang',
+            'label' => 'bidang',
+            'rules' => 'required'],
+
+            ['field' => 'gol',
+            'label' => 'gol',
+            'rules' => 'required'],
+            
+            ['field' => 'pendidikan',
+            'label' => 'pendidikan',
+            'rules' => 'required'],
+
+            ['field' => 'ttl',
+            'label' => 'ttl',
+            'rules' => 'required'],
+
+            ['field' => 'phone',
+            'label' => 'phone',
+            'rules' => 'required']
+        ];
+    }
+
+    public function getAll()
+    {
+        return $this->db->get($this->_table)->result();
+    }
+    
+    public function getById($id)
+    {
+        return $this->db->get_where($this->_table, ["id_pegawai" => $id])->row();
+    }
+
+    public function save()
+    {
+        $post = $this->input->post();
+        $this->id_pegawai = 'DEFAULT';
+        $this->nama = $post["nama"];
+        $this->nip = $post["nip"];
+        $this->jabatan = $post["jabatan"];
+        $this->bidang = $post["bidang"];
+        $this->gol = $post["gol"];
+        $this->pendidikan = $post["pendidikan"];
+        $this->ttl = $post["ttl"];
+        $this->phone = $post["phone"];
+        return $this->db->insert($this->_table, $this);
+    }
+
+    public function update()
+    {
+        $post = $this->input->post();
+        $this->id_pegawai = $post["id"];
+        $this->nama = $post["nama"];
+        $this->nip = $post["nip"];
+        $this->jabatan = $post["jabatan"];
+        $this->bidang = $post["bidang"];
+        $this->gol = $post["gol"];
+        $this->pendidikan = $post["pendidikan"];
+        $this->ttl = $post["ttl"];
+        $this->phone = $post["phone"];
+        return $this->db->update($this->_table, $this, array('id_pegawai' => $post['id']));
+    }
+
+    public function delete($id)
+    {
+        return $this->db->delete($this->_table, array("id_pegawai" => $id));
+    }
 }

@@ -1,16 +1,19 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pidum extends CI_Controller {
+class Pidum extends CI_Controller
+{
 
 
 	public function index()
 	{
-		$this->load->view('/user/_pidum.php');
+		$data['pidum'] = $this->db->get('pidum')->result_array();
+		$this->load->view('/user/_pidum.php', $data);
 	}
 
 	public function tilang()
 	{
-		$this->load->view('/user/__tilang.php');
+		$data['tilang'] = $this->db->get('tilang')->result_array();
+		$this->load->view('/user/__tilang.php', $data);
 	}
 }

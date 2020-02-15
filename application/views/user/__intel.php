@@ -17,7 +17,7 @@
 <body>
     <nav class="navbar navbar-light navbar-expand fixed-top" id="mainNav">
         <div class="container">
-            <a href="index.html">
+            <a href="<?= base_url('welcome'); ?>">
                 <img src="<?= base_url('assets'); ?>/img/jaksa.png" style="width: 52px;height: 52px;margin-left: 16px;">
             </a>
             <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

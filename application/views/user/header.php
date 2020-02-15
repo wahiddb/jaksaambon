@@ -12,19 +12,20 @@
     <link rel="stylesheet" href="<?= base_url('assets'); ?>/fonts/ionicons.min.css">
     <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/Footer-Basic.css">
     <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/untitled.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
 </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand fixed-top" id="mainNav">
         <div class="container">
-            <a href="index.html">
+            <a href="<?= base_url('welcome'); ?>">
                 <img src="<?= base_url('assets'); ?>/img/jaksa.png" style="width: 52px;height: 52px;margin-left: 16px;">
             </a>
             <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <div
-                class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url('pembinaan'); ?>">Pembinaan</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url('intelijen'); ?>">Intelijen</a></li>
@@ -36,6 +37,6 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url('iad'); ?>">IAD</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url('wbk'); ?>">WBK / WBMM</a></li>
                 </ul>
-        </div>
+            </div>
         </div>
     </nav>

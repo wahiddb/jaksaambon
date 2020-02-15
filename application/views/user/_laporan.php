@@ -18,14 +18,13 @@
 <body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="<?= base_url('welcome'); ?>">
                 <img src="<?= base_url('assets'); ?>/img/jaksa.png" style="width: 50px;height: 50px;margin-left: 16px;">
             </a>
             <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <div
-                class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url('pembinaan'); ?>">Pembinaan</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url('intelijen'); ?>">Intelijen</a></li>
@@ -63,13 +62,13 @@
                         </div>
                         <div class="collapse show item-1" role="tabpanel" data-parent="#accordion-1 .item-1">
                             <div class="card-body">
-                                 <a href="<?= base_url('intelijen'); ?>">
+                                <a href="<?= base_url('intelijen'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Pelayanan Pelaporan Masyarakat</p>
                                 </a>
                                 <a href="<?= base_url('intelijen/laporan'); ?>">
                                     <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Perkembangan Laporan</p>
                                 </a>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -102,61 +101,58 @@
                             <table class="table dataTable my-0" id="myTable">
                                 <thead>
                                     <tr>
-                                      <th>
-                                        <center>No</center>
-                                      </th>
-                                      <th>
-                                        <center>Nama Pelapor</center>
-                                      </th>
-                                      <th>
-                                        <center>Nama Terlapor</center>
-                                      </th>
-                                      <th>
-                                        <center>Dugaan Tindak Pidana</center>
-                                      </th>
-                                      <th>
-                                        <center>Keterangan</center>
-                                      </th>
-                                      <th>
-                                        <center>Status</center>
-                                      </th>
+                                        <th>
+                                            <center>No</center>
+                                        </th>
+                                        <th>
+                                            <center>Nama Pelapor</center>
+                                        </th>
+                                        <th>
+                                            <center>Nama Terlapor</center>
+                                        </th>
+                                        <th>
+                                            <center>Dugaan Tindak Pidana</center>
+                                        </th>
+                                        <th>
+                                            <center>Keterangan</center>
+                                        </th>
+                                        <th>
+                                            <center>Status</center>
+                                        </th>
                                     </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>1</td>
-                                      <td><center>Dono Kasino</center></td>
-                                      <td><center> Jaksa Agung Muda </center></td>
-                                      <td><center> Pemeriksa </center></td>
-                                      <td><center> 2546111345 </center></td>
-                                      <td>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td>2</td>
-                                      <td><center>Dono Kasino</center></td>
-                                      <td><center> Jaksa Agung Muda </center></td>
-                                      <td><center> Pemeriksa </center></td>
-                                      <td><center> 2546111345 </center></td>
-                                      <td>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td>3</td>
-                                      <td><center>Dono Kasino</center></td>
-                                      <td><center> Jaksa Agung Muda </center></td>
-                                      <td><center> Pemeriksa </center></td>
-                                      <td><center> 2546111345 </center></td>
-                                      <td>
-                                      </td>
-                                    </tr>
-                                  </tbody>
+                                </thead>
+                                <tbody>
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($intel as $data) : ?>
+                                        <tr>
+                                            <td>
+                                                <center><?= $i; ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?= $data['pelapor']; ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?= $data['terlapor']; ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?= $data['tindak_pidana']; ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?= $data['keterangan']; ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?= $data['status']; ?></center>
+                                            </td>
+
+                                        </tr>
+                                        <?php $i++; ?>
+                                    <?php endforeach; ?>
+                                </tbody>
                             </table>
                         </div>
-                 
+
                     </div>
                 </div>
             </div>
-        </di
-        <?php 
-        include 'footer.php' ?>
+            </di <?php
+                    include 'footer.php' ?>

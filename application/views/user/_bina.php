@@ -44,10 +44,10 @@
               </div>
           </div>
           <div class="col col-md-6 col-lg-9">
-              <h1 style="text-align: center; margin-bottom: 40px;">Informasi Kepegawaian</h1>
+              <h1 style="text-align: center; margin-bottom: 40px;">Informasi Barang Bukti</h1>
               <div class="card shadow" style="margin-top: 10px;">
                   <div class="card-header py-3">
-                      <p class="text-primary m-0 font-weight-bold">Data Pegawai Kejaksaan Negeri Ambon</p>
+                      <p class="text-primary m-0 font-weight-bold">Data Barang Bukti Dimusnahkan</p>
                   </div>
                   <div class="card-body">
 

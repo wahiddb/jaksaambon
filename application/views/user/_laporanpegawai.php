@@ -77,60 +77,31 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <td>1</td>
-                                      <td>
-                                          <center>Dono Kasino</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Pemeriksa </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>2</td>
-                                      <td>
-                                          <center>Dono Kasino</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Pemeriksa </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>3</td>
-                                      <td>
-                                          <center>Dono Kasino</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Pemeriksa </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
+                                  <?php $i = 1; ?>
+                                  <?php foreach ($pemeriksa as $data) : ?>
+                                      <tr>
+                                          <td>
+                                              <center><?= $i; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['pelapor']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['terlapor']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['pelanggaran']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['keterangan']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['status']; ?></center>
+                                          </td>
+
+                                      </tr>
+                                      <?php $i++; ?>
+                                  <?php endforeach; ?>
                               </tbody>
                           </table>
                       </div>

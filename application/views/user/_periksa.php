@@ -48,14 +48,14 @@
           </div>
           <div class="col col-md-6 col-lg-9">
               <h1 style="text-align: center; margin-bottom: 40px;">Form Pelaporan Pelanggaran Pegawai</h1>
-              <form>
+              <form method="POST" action="<?= base_url('pemeriksaan/input'); ?>">
                   <div class="form-group">
                       <label for="name">Nama Pelapor</label>
-                      <input type="text" class="form-control" id="name" aria-describedby="text" placeholder="Masukkan Nama Pelapor">
+                      <input name="pelapor" type="text" class="form-control" id="name" aria-describedby="text" placeholder="Masukkan Nama Pelapor">
                   </div>
                   <div class="form-group">
                       <label for="name">Jenis Identitas</label>
-                      <select class="form-control">
+                      <select name="identitas" class="form-control">
                           <option value="ktp">KTP</option>
                           <option value="sim">SIM</option>
                           <option value="passport">Passport</option>
@@ -63,24 +63,24 @@
                   </div>
                   <div class="form-group">
                       <label for="name">No. Identitas</label>
-                      <input type="text" class="form-control" id="name" aria-describedby="text" placeholder="Masukkan No. Identitas">
+                      <input name="no_identitas" type="number" class="form-control" id="name" aria-describedby="text" placeholder="Masukkan No. Identitas">
                   </div>
                   <div class="form-group">
                       <label for="exampleInputEmail1">Alamat Email / No.Telepon</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan email">
+                      <input name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan email">
                       <small id="emailHelp" class="form-text text-muted">Kami tidak akan mempublikasikan email anda</small>
                   </div>
                   <div class="form-group">
                       <label for="name">Nama Pegawai Terlapor</label>
-                      <input type="text" class="form-control" id="name" aria-describedby="text" placeholder="Masukkan Nama Terlapor">
+                      <input name="terlapor" type="text" class="form-control" id="name" aria-describedby="text" placeholder="Masukkan Nama Terlapor">
                   </div>
                   <div class="form-group">
                       <label for="name">Dugaan Pelanggaran Pegawai</label>
-                      <input type="text" class="form-control" id="name" aria-describedby="text" placeholder="Masukkan Dugaan Tindak Pidana Terlapor">
+                      <input name="pelanggaran" type="text" class="form-control" id="name" aria-describedby="text" placeholder="Masukkan Dugaan Tindak Pidana Terlapor">
                   </div>
                   <div class="form-group">
                       <label for="exampleFormControlTextarea1">Keterangan</label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Masukkan Keterangan Tambahan"></textarea>
+                      <textarea name="keterangan" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Masukkan Keterangan Tambahan"></textarea>
                   </div>
                   <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
               </form>

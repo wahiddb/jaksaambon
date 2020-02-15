@@ -59,8 +59,9 @@
                       <p class="text-primary m-0 font-weight-bold">Data Barang Bukti Dirampas Negara</p>
                   </div>
                   <div class="card-body">
-                      <div class="table-responsive table mt-2 " id="dataTable" role="grid" aria-describedby="dataTable_info">
-                          <table class="table dataTable my-4 " id="myTable">
+
+                      <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                          <table class="table dataTable my-0" id="myTable">
                               <thead>
                                   <tr>
                                       <th>No</th>
@@ -85,176 +86,31 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <td>1</td>
-                                      <td>
-                                          <center>Dono Kasino</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Dirampas </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>2</td>
-                                      <td>
-                                          <center>Indro</center>
-                                      </td>
-                                      <td>
-                                          <center> Kasubag </center>
-                                      </td>
-                                      <td>
-                                          <center> Dirampas </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111455 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>3</td>
-                                      <td>
-                                          <center>Dono Kasino Indro</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Dirampas </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>4</td>
-                                      <td>
-                                          <center>Dono Kasino</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Dirampas </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>5</td>
-                                      <td>
-                                          <center>Indro</center>
-                                      </td>
-                                      <td>
-                                          <center> Kasubag </center>
-                                      </td>
-                                      <td>
-                                          <center> Dirampas </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111455 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>6</td>
-                                      <td>
-                                          <center>Dono Kasino Indro</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Dirampas </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>7</td>
-                                      <td>
-                                          <center>Dono Kasino Indro</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Dirampas </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>8</td>
-                                      <td>
-                                          <center>Dono Kasino Indro</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Dirampas </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>9</td>
-                                      <td>
-                                          <center>Dono Kasino Indro</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Dirampas </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>10</td>
-                                      <td>
-                                          <center>Dono Kasino Indro</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Dirampas </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
+                                  <!-- <?php $i = 1; ?>
+                                    <?php foreach ($intel as $data) : ?>
+                                        <tr>
+                                            <td>
+                                                <center><?= $i; ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?= $data['pelapor']; ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?= $data['terlapor']; ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?= $data['tindak_pidana']; ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?= $data['keterangan']; ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?= $data['status']; ?></center>
+                                            </td>
+
+                                        </tr>
+                                        <?php $i++; ?>
+                                    <?php endforeach; ?> -->
                               </tbody>
                           </table>
                       </div>

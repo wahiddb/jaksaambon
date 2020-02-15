@@ -53,14 +53,15 @@
               </div>
           </div>
           <div class="col col-md-6 col-lg-9">
-              <h1 style="text-align: center; margin-bottom: 40px;">Informasi Barang Bukti</h1>
+              <h1 style="text-align: center; margin-bottom: 40px;">Perkembangan Laporan</h1>
               <div class="card shadow" style="margin-top: 10px;">
                   <div class="card-header py-3">
-                      <p class="text-primary m-0 font-weight-bold">Data Barang Bukti Dilelang</p>
+                      <p class="text-primary m-0 font-weight-bold">Data Perkembangan Laporan Kejaksaan Negeri Ambon</p>
                   </div>
                   <div class="card-body">
-                      <div class="table-responsive table mt-2 " id="dataTable" role="grid" aria-describedby="dataTable_info">
-                          <table class="table dataTable my-4 " id="myTable">
+
+                      <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                          <table class="table dataTable my-0" id="myTable">
                               <thead>
                                   <tr>
                                       <th>No</th>
@@ -85,24 +86,31 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <td>1</td>
-                                      <td>
-                                          <center>Dono Kasino</center>
-                                      </td>
-                                      <td>
-                                          <center> Jaksa Agung Muda </center>
-                                      </td>
-                                      <td>
-                                          <center> Dikembalikan </center>
-                                      </td>
-                                      <td>
-                                          <center> 2546111345 </center>
-                                      </td>
-                                      <td>
-                                      </td>
-                                  </tr>
+                                  <!-- <?php $i = 1; ?>
+                                  <?php foreach ($intel as $data) : ?>
+                                      <tr>
+                                          <td>
+                                              <center><?= $i; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['pelapor']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['terlapor']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['tindak_pidana']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['keterangan']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['status']; ?></center>
+                                          </td>
 
+                                      </tr>
+                                      <?php $i++; ?>
+                                  <?php endforeach; ?> -->
                               </tbody>
                           </table>
                       </div>

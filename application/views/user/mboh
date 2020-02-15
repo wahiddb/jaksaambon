@@ -1,8 +1,8 @@
-   <div class="col col-md-6 col-lg-9">
-              <h1 style="text-align: center; margin-bottom: 40px;">Informasi Perkara</h1>
+  <div class="col col-md-6 col-lg-9">
+              <h1 style="text-align: center; margin-bottom: 40px;">Informasi Barang Bukti</h1>
               <div class="card shadow" style="margin-top: 10px;">
                   <div class="card-header py-3">
-                      <p class="text-primary m-0 font-weight-bold">Data Perkara Pidana Khusus</p>
+                      <p class="text-primary m-0 font-weight-bold">Data Barang Bukti Dimusnahkan</p>
                   </div>
                   <div class="card-body">
                       <div class="table-responsive table mt-2 " id="dataTable" role="grid" aria-describedby="dataTable_info">
@@ -11,19 +11,19 @@
                                   <tr>
                                       <th>No</th>
                                       <th>
-                                          <center>Nomor Perkara</center>
+                                          <center>Nama Tersangka</center>
                                       </th>
                                       <th>
-                                          <center>Pasal Yang Dilanggar</center>
+                                          <center>No. Perkara</center>
                                       </th>
                                       <th>
-                                          <center>Tersangka</center>
+                                          <center>Jenis Barang Bukti</center>
                                       </th>
                                       <th>
-                                          <center>Jadwal Sidang</center>
+                                          <center>Banyaknya Satuan</center>
                                       </th>
                                       <th>
-                                          <center>Agenda</center>
+                                          <center>Status</center>
                                       </th>
                                       <th>
                                           <center>Keterangan</center>
@@ -37,10 +37,10 @@
                                           <center>Dono Kasino</center>
                                       </td>
                                       <td>
-                                          <center> Pencurian </center>
+                                          <center> Jaksa Agung Muda </center>
                                       </td>
                                       <td>
-                                          <center> Sedang Ditangani </center>
+                                          <center> Dimusnahkan </center>
                                       </td>
                                       <td>
                                           <center> 2546111345 </center>
@@ -54,10 +54,10 @@
                                           <center>Indro</center>
                                       </td>
                                       <td>
-                                          <center> Pencurian </center>
+                                          <center> Kasubag </center>
                                       </td>
                                       <td>
-                                          <center> Sedang Ditangani </center>
+                                          <center> Dimusnahkan </center>
                                       </td>
                                       <td>
                                           <center> 2546111455 </center>
@@ -71,10 +71,10 @@
                                           <center>Dono Kasino Indro</center>
                                       </td>
                                       <td>
-                                          <center> Pencurian </center>
+                                          <center> Jaksa Agung Muda </center>
                                       </td>
                                       <td>
-                                          <center> Sedang Ditangani </center>
+                                          <center> Dimusnahkan </center>
                                       </td>
                                       <td>
                                           <center> 2546111345 </center>
@@ -88,10 +88,10 @@
                                           <center>Dono Kasino</center>
                                       </td>
                                       <td>
-                                          <center> Pencurian </center>
+                                          <center> Jaksa Agung Muda </center>
                                       </td>
                                       <td>
-                                          <center> Sedang Ditangani </center>
+                                          <center> Dimusnahkan </center>
                                       </td>
                                       <td>
                                           <center> 2546111345 </center>
@@ -105,10 +105,10 @@
                                           <center>Indro</center>
                                       </td>
                                       <td>
-                                          <center> Perceraian </center>
+                                          <center> Kasubag </center>
                                       </td>
                                       <td>
-                                          <center> Dieksekusi </center>
+                                          <center> Dimusnahkan </center>
                                       </td>
                                       <td>
                                           <center> 2546111455 </center>
@@ -122,10 +122,10 @@
                                           <center>Dono Kasino Indro</center>
                                       </td>
                                       <td>
-                                          <center> Perceraian </center>
+                                          <center> Jaksa Agung Muda </center>
                                       </td>
                                       <td>
-                                          <center> Dieksekusi </center>
+                                          <center> Dimusnahkan </center>
                                       </td>
                                       <td>
                                           <center> 2546111345 </center>
@@ -139,10 +139,10 @@
                                           <center>Dono Kasino Indro</center>
                                       </td>
                                       <td>
-                                          <center> Perceraian </center>
+                                          <center> Jaksa Agung Muda </center>
                                       </td>
                                       <td>
-                                          <center> Dieksekusi </center>
+                                          <center> Dimusnahkan </center>
                                       </td>
                                       <td>
                                           <center> 2546111345 </center>
@@ -156,10 +156,10 @@
                                           <center>Dono Kasino Indro</center>
                                       </td>
                                       <td>
-                                          <center> Perceraian </center>
+                                          <center> Jaksa Agung Muda </center>
                                       </td>
                                       <td>
-                                          <center> Dieksekusi </center>
+                                          <center> Dimusnahkan </center>
                                       </td>
                                       <td>
                                           <center> 2546111345 </center>
@@ -173,10 +173,10 @@
                                           <center>Dono Kasino Indro</center>
                                       </td>
                                       <td>
-                                          <center> Perceraian </center>
+                                          <center> Jaksa Agung Muda </center>
                                       </td>
                                       <td>
-                                          <center> Dieksekusi </center>
+                                          <center> Dimusnahkan </center>
                                       </td>
                                       <td>
                                           <center> 2546111345 </center>
@@ -190,10 +190,10 @@
                                           <center>Dono Kasino Indro</center>
                                       </td>
                                       <td>
-                                          <center> Perceraian </center>
+                                          <center> Jaksa Agung Muda </center>
                                       </td>
                                       <td>
-                                          <center> Dieksekusi </center>
+                                          <center> Dimusnahkan </center>
                                       </td>
                                       <td>
                                           <center> 2546111345 </center>

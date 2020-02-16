@@ -7,13 +7,15 @@ class Admin_pidum extends CI_Controller {
     {
         parent::__construct();
         $this->load->model("m_pidum");
+        $this->load->model("m_tilang");
         $this->load->library('form_validation');
 	}
 	
 	public function index()
 	{
 		if($this->session->userdata('level')==='1' || $this->session->userdata('level')==='9'){
-			$data["pidum"] = $this->m_pidum->getAll();
+            $data["pidum"] = $this->m_pidum->getAll();
+            $data["tilang"] = $this->m_tilang->getAll();
 			$this->template_admin->load('/admin/template_admin', '/admin/pidum', $data);
 		} else{
 			echo "<script>
@@ -61,6 +63,48 @@ class Admin_pidum extends CI_Controller {
         if (!isset($id)) show_404();
         
         if ($this->m_pidum->delete($id)) {
+            redirect(site_url('admin/admin_pidum'));
+        }
+    }
+
+    public function addtilang()
+    {
+        $tilang = $this->m_tilang;
+        $validation = $this->form_validation;
+        $validation->set_rules($tilang->rules());
+
+        if ($validation->run()) {
+            $tilang->save();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $this->template_admin->load('/admin/template_admin', '/admin/addTilang');
+    }
+
+    public function edittilang($id = null)
+    {
+        if (!isset($id)) redirect('admin/admin_pidum');
+       
+        $tilang = $this->m_tilang;
+        $validation = $this->form_validation;
+        $validation->set_rules($tilang->rules());
+
+        if ($validation->run()) {
+            $tilang->update();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $data["tilang"] = $tilang->getById($id);
+        if (!$data["tilang"]) show_404();
+        
+        $this->template_admin->load('/admin/template_admin', '/admin/editTilang', $data);
+    }
+
+    public function deletetilang($id=null)
+    {
+        if (!isset($id)) show_404();
+        
+        if ($this->m_tilang->delete($id)) {
             redirect(site_url('admin/admin_pidum'));
         }
     }

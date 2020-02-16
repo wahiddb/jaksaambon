@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-xl"><i class="far fa-plus-square"> Tambah Data</i></button>
+            
           </div><!-- /.col -->
         </div><!-- /.row -->
         <div class="row">
@@ -49,66 +49,23 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td><center>Dono Kasino</center></td>
-                        <td><center> Jaksa Agung Muda </center></td>
-                        <td><center> 23133232 </center></td>
-                        <td><center> Kabid </center></td>
-                        <td>
-                          <th>
-                            <center>
-                              <button type="button" class="btn btn-warning"><i class="far fa-edit"> Edit</i></button>
-                              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"> Hapus</i></button>
-                            </center>
-                          </th>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td><center>Dono Kasino</center></td>
-                        <td><center> Jaksa Agung Muda </center></td>
-                        <td><center> 23133232 </center></td>
-                        <td><center> Kabid </center></td>
-                        <td>
-                          <th>
-                            <center>
-                              <button type="button" class="btn btn-warning"><i class="far fa-edit"> Edit</i></button>
-                              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"> Hapus</i></button>
-                            </center>
-                          </th>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td><center>Dono Kasino</center></td>
-                        <td><center> Jaksa Agung Muda </center></td>
-                        <td><center> 23133232 </center></td>
-                        <td><center> Kabid </center></td>
-                        <td>
-                          <th>
-                            <center>
-                              <button type="button" class="btn btn-warning"><i class="far fa-edit"> Edit</i></button>
-                              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"> Hapus</i></button>
-                            </center>
-                          </th>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td><center>Dono Kasino</center></td>
-                        <td><center> Jaksa Agung Muda </center></td>
-                        <td><center> 23133232 </center></td>
-                        <td><center> Kabid </center></td>
-                        <td>
-                          <th>
-                            <center>
-                              <button type="button" class="btn btn-warning"><i class="far fa-edit"> Edit</i></button>
-                              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"> Hapus</i></button>
-                            </center>
-                          </th>
-                        </td>
-                      </tr>
+
+                    <?php
+                        $no = 0;
+                        foreach ($datun as $key => $datun) {?>
+                            <tr>
+                                <td style="text-align:center;"><?php echo $no += 1; ?></td>
+                                <td style="text-align:center;"><?php echo $datun->pemohon ?></td>
+                                <td style="text-align:center;"><?php echo $datun->email ?></td>
+                                <td style="text-align:center;"><?php echo $datun->perihal ?></td>
+                                <td style="text-align:center;"><?php echo $datun->keterangan ?></td>
+                                <td style="text-align:center;">
+                                    <!-- <a class="btn  btn-warning" href="<?php echo site_url('admin/admin_datun/edit/' .$datun->id_datun) ?>"  title="Edit"><span class="far fa-edit"></span> Edit</a> -->
+                                    <a onclick="deleteConfirm('<?php echo site_url('admin/admin_datun/delete/'.$datun->id_datun) ?>')" href="#!" class="btn  btn-danger" title="Hapus"><span class="far fa-trash-alt"></span> Hapus</a>
+                                </td>
+                            </tr>
+                        <?php  }?>
+                
                     </tbody>
                   </table>
                 </div>
@@ -120,57 +77,33 @@
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
-      <div class="modal fade" id="modal-xl">
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Tambah Data Pegawai</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="inputName">Nama Pegawai</label>
-                <input type="text" id="inputName" class="form-control" value="Nama Pegawai">
-              </div>
-              <div class="form-group">
-                <label for="inputDescription">Jabatan</label>
-                <select class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option>Kasubag</option>
-                  <option>Jaksa Agung Muda</option>
-                  <option selected>Kabid</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="inputStatus">Bidang</label>
-                <select class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option>Pembinaan</option>
-                  <option>Intelijen</option>
-                  <option selected>Pidana Umum</option>
-                  <option selected>Pidana Khusus</option>
-                  <option selected>Perdata & Tata Usaha</option>
-                  <option selected>Barang Bukti</option>
-                  <option selected>Pemeriksa</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="inputClientCompany">No. Register</label>
-                <input type="text" id="inputClientCompany" class="form-control" value="No Register">
-              </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-              <button type="button" class="btn btn-primary">Tambahkan Data</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
     </div>
     <!-- /.content -->
   </div>
+
+  <script>
+function deleteConfirm(url){
+	$('#btn-delete').attr('href', url);
+	$('#deleteModal').modal();
+}
+</script>
+
+<!-- Logout Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+

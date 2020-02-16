@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-xl"><i class="far fa-plus-square"> Tambah Data</i></button>
+          <a href="<?php echo site_url('admin/admin_barbuk/add') ?>"><button type="button" class="btn btn-info" ><i class="far fa-plus-square"> Tambah Data</i></button></a>
           </div><!-- /.col -->
         </div><!-- /.row -->
         <div class="row">
@@ -68,8 +68,8 @@
                                 <td style="text-align:center;"><?php echo $barbuk->status ?></td>
                                 <td style="text-align:center;"><?php echo $barbuk->keterangan ?></td>
                                 <td style="text-align:center;">
-                                    <a class="btn  btn-warning" href="<?php echo site_url('admin/admin_barbuk/edit/' .$barbuk->id_barbuk) ?>"  title="Edit"><span class="far fa-edit"></span> Edit</a>
-                                    <a onclick="deleteConfirm('<?php echo site_url('admin/admin_barbuk/delete/'.$barbuk->id_barbuk) ?>')" href="#!" class="btn  btn-danger" title="Hapus"><span class="far fa-trash-alt"></span> Hapus</a>
+                                    <a class="btn  btn-warning" href="<?php echo site_url('admin/admin_barbuk/edit/' .$barbuk->id_bb) ?>"  title="Edit"><span class="far fa-edit"></span> Edit</a>
+                                    <a onclick="deleteConfirm('<?php echo site_url('admin/admin_barbuk/delete/'.$barbuk->id_bb) ?>')" href="#!" class="btn  btn-danger" title="Hapus"><span class="far fa-trash-alt"></span> Hapus</a>
                                 </td>
                             </tr>
                         <?php  }?>

@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="<?= base_url('assets'); ?>/dist/plugins/fontawesome-free/css/all.min.css">
   <!-- IonIcons -->
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="<?= base_url('assets'); ?>/dist/plugins/daterangepicker/daterangepicker.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url('assets'); ?>/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -36,7 +38,7 @@
   <aside class="main-sidebar sidebar-light-lime elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/jaksa.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="<?= base_url('assets'); ?>/dist/img/jaksa.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">Kejari Ambon</span>
     </a>
@@ -124,31 +126,23 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="<?php echo base_url().'admin/admin_adyaksa'; ?>" <?php if ($this->uri->segment(2) == 'admin_adyaksa') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?> >
-              <i class="far fa-edit"></i>
-              <p>
-                Adyaksa Dharmakarin
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">PENGADUAN MASYARAKAT</li>
+          <li class="nav-header">Kelola Kegiatan</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="far fa-file-alt"></i>
-              <p>Pengaduan Tindak Pidana</p>
+              <p>Tambah Kegiatan Bidang</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="far fa-file-alt"></i>
-              <p>Bantuan Hukum</p>
+              <p>Adyaksa Dharmakarin</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="far fa-file-alt"></i>
-              <p>Pelanggaran Pegawai</p>
+              <p>WBK / WBMM</p>
             </a>
           </li>
         </ul>

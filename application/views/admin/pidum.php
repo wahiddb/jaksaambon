@@ -16,7 +16,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
           <a href="<?php echo site_url('admin/admin_pidum/add') ?>"><button type="button" class="btn btn-info" ><i class="far fa-plus-square"> Tambah Data Pidum</i></button></a>
-          <a href="<?php echo site_url('admin/admin_pidum/add') ?>"><button type="button" class="btn btn-info" ><i class="far fa-plus-square"> Tambah Data Tilang</i></button></a>
+          <a href="<?php echo site_url('admin/admin_pidum/addTilang') ?>"><button type="button" class="btn btn-info" ><i class="far fa-plus-square"> Tambah Data Tilang</i></button></a>
           </div><!-- /.col -->
         </div><!-- /.row -->
         <div class="row">
@@ -117,23 +117,26 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td><center>Dono Kasino</center></td>
-                          <td><center> Jaksa Agung Muda </center></td>
-                          <td><center> Status </center></td>
-                          <td><center> Keterangan </center></td>
-                          <td>
-                            <th>
-                              <center>
-                                <button type="button" class="btn btn-warning"><i class="far fa-edit"> Edit</i></button>
-                                <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"> Hapus</i></button>
-                              </center>
-                            </th>
-                          </td>
-                        </tr>
-                  
-                      </tbody>
+
+                    <?php
+                        $no = 0;
+                        foreach ($tilang as $key => $tilang) {?>
+                            <tr>
+                                <td style="text-align:center;"><?php echo $no += 1; ?></td>
+                                <td style="text-align:center;"><?php echo $tilang->tersangka ?></td>
+                                <td style="text-align:center;"><?php echo $tilang->pasal ?></td>
+                                <td style="text-align:center;"><?php echo $tilang->nomor_perkara ?></td>
+                                <td style="text-align:center;"><?php echo $tilang->plat ?></td>
+                                <td style="text-align:center;"><?php echo $tilang->tgl_sidang ?></td>
+                                <td style="text-align:center;"><?php echo $tilang->status ?></td>
+                                <td style="text-align:center;">
+                                    <a class="btn  btn-warning" href="<?php echo site_url('admin/admin_pidum/edittilang/' .$tilang->id_tilang) ?>"  title="Edit"><span class="far fa-edit"></span> Edit</a>
+                                    <a onclick="deleteConfirm('<?php echo site_url('admin/admin_pidum/deletetilang/'.$tilang->id_tilang) ?>')" href="#!" class="btn  btn-danger" title="Hapus"><span class="far fa-trash-alt"></span> Hapus</a>
+                                </td>
+                            </tr>
+                        <?php  }?>
+                
+                    </tbody>
                     </table>
                   </div>
                 </div>

@@ -1,0 +1,99 @@
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Tambah Data</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+     <!-- Main content -->
+     <div class="content">
+     <div class="container-fluid">
+        <?php if ($this->session->flashdata('success')): ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+        <?php endif; ?>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                <a href="<?php echo site_url('admin/admin_barbuk') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+            </div>
+            <div class="card-body">
+
+                <form action="" method="post" enctype="multipart/form-data" >
+                <input type="hidden" name="id" value="<?php echo $barbuk->id_bb?>" />
+
+                    <div class="form-group">
+                        <label for="tersangka">Tersangka*</label>
+                        <input class="form-control <?php echo form_error('tersangka') ? 'is-invalid':'' ?>"
+                        type="text" name="tersangka" placeholder="Tersangka" value="<?php echo $barbuk->tersangka ?>"/>
+                        <div class="invalid-feedback">
+                            <?php echo form_error('tersangka') ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="no_perkara">Nomor Perkara*</label>
+                        <input class="form-control <?php echo form_error('no_perkara') ? 'is-invalid':'' ?>"
+                        type="text" name="no_perkara" placeholder="Nomor Perkara" value="<?php echo $barbuk->no_perkara ?>"/>
+                        <div class="invalid-feedback">
+                            <?php echo form_error('no_perkara') ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jenis">Jenis Barang Bukti*</label>
+                        <input class="form-control <?php echo form_error('jenis') ? 'is-invalid':'' ?>"
+                        type="text" name="jenis" placeholder="Jenis Barang Bukti" value="<?php echo $barbuk->jenis ?>"/>
+                        <div class="invalid-feedback">
+                            <?php echo form_error('jenis') ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jumlah">Banyaknya Satuan*</label>
+                        <input class="form-control <?php echo form_error('jumlah') ? 'is-invalid':'' ?>"
+                        type="number" name="jumlah" placeholder="Banyaknya Satuan" value="<?php echo $barbuk->jumlah ?>"/>
+                        <div class="invalid-feedback">
+                            <?php echo form_error('jumlah') ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="inputDescription">Status</label>
+                    <select class="form-control custom-select <?php echo form_error('status') ? 'is-invalid':'' ?>"
+                            name="status" value="<?php echo $barbuk->status ?>">
+                    <option selected disabled>Pilih status</option>
+                    <option>Dimusnahkan</option>
+                    <option>Dirampas Negara</option>
+                    <option>Dikembalikan</option>
+                    <option>Dilelang</option>
+                    </select>
+                </div>
+
+                    <div class="form-group">
+							<label for="keterangan">Keterangan*</label>
+							<textarea class="form-control <?php echo form_error('keterangan') ? 'is-invalid':'' ?>"
+								name="keterangan" placeholder="Keterangan" ><?php echo $barbuk->keterangan ?></textarea>
+							<div class="invalid-feedback">
+								<?php echo form_error('keterangan') ?>
+							</div>
+					</div>
+
+                    <input class="btn btn-success" type="submit" name="btn" value="Save" />
+                </form>
+            </div>
+
+            <div class="card-footer small text-muted">
+                * required fields
+            </div>
+            </div>
+        </div>
+<!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->

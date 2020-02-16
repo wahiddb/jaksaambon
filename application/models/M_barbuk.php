@@ -67,7 +67,7 @@ class M_barbuk extends CI_Model
     {
         $post = $this->input->post();
         $this->id_bb = $post["id"];
-        $this->nomor_perkara = $post["no_perkara"];
+        $this->no_perkara = $post["no_perkara"];
         $this->jenis = $post["jenis"];
         $this->tersangka = $post["tersangka"];
         $this->jumlah = $post["jumlah"];

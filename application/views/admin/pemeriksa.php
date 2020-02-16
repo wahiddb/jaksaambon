@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-xl"><i class="far fa-plus-square"> Tambah Data</i></button>
+            
           </div><!-- /.col -->
         </div><!-- /.row -->
         <div class="row">
@@ -61,27 +61,26 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td><center>Dono Kasino</center></td>
-                        <td><center> Jaksa Agung Muda </center></td>
-                        <td><center>  </center></td>
-                        <td><center> </center></td>
-                        <td><center>  </center></td>
-                        <td><center>  </center></td>
-                        <td><center>  </center></td>
-                        <td><center>  </center></td>
-                        <td><center>  </center></td>
-                        <td>
-                          <th>
-                            <center>
-                              <button type="button" class="btn btn-warning"><i class="far fa-edit"> Edit</i></button>
-                              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"> Hapus</i></button>
-                            </center>
-                          </th>
-                        </td>
-                      </tr>
-                
+                    <?php
+                        $no = 0;
+                        foreach ($pemeriksa as $key => $pemeriksa) {?>
+                            <tr>
+                                <td style="text-align:center;"><?php echo $no += 1; ?></td>
+                                <td style="text-align:center;"><?php echo $pemeriksa->pelapor ?></td>
+                                <td style="text-align:center;"><?php echo $pemeriksa->identitas ?></td>
+                                <td style="text-align:center;"><?php echo $pemeriksa->no_identitas ?></td>
+                                <td style="text-align:center;"><?php echo $pemeriksa->email ?></td>
+                                <td style="text-align:center;"><?php echo $pemeriksa->terlapor ?></td>
+                                <td style="text-align:center;"><?php echo $pemeriksa->pelanggaran ?></td>
+                                <td style="text-align:center;"><?php echo $pemeriksa->keterangan ?></td>
+                                <td style="text-align:center;"><?php echo $pemeriksa->status ?></td>
+                                <td style="text-align:center;">
+                                    <a class="btn  btn-warning" href="<?php echo site_url('admin/admin_pemeriksa/edit/' .$pemeriksa->id_pemeriksa) ?>"  title="Edit"><span class="far fa-edit"></span> Edit</a>
+                                    <a onclick="deleteConfirm('<?php echo site_url('admin/admin_pemeriksa/delete/'.$pemeriksa->id_pemeriksa) ?>')" href="#!" class="btn  btn-danger" title="Hapus"><span class="far fa-trash-alt"></span> Hapus</a>
+                                    
+                                </td>
+                            </tr>
+                        <?php  }?>
                     </tbody>
                   </table>
                 </div>
@@ -171,7 +170,7 @@
                 <select class="form-control custom-select">
                   <option selected disabled>Select one</option>
                   <option>Pembinaan</option>
-                  <option>Intelijen</option>
+                  <option>pemeriksaijen</option>
                   <option selected>Pidana Umum</option>
                   <option selected>Pidana Khusus</option>
                   <option selected>Perdata & Tata Usaha</option>
@@ -196,3 +195,29 @@
       <!-- /.modal -->
     </div>
     <!-- /.content -->
+
+    <script>
+function deleteConfirm(url){
+	$('#btn-delete').attr('href', url);
+	$('#deleteModal').modal();
+}
+</script>
+
+<!-- Logout Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>

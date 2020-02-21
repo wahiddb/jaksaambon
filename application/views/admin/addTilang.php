@@ -3,7 +3,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Tambah Data Tilang</h1>
+            <h1 class="m-0 text-dark">Tambah Data</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="pasal">Pasal Yang Dilanggar*</label>
+                        <label for="pasal">Pasal yang Dilanggar*</label>
                         <input class="form-control <?php echo form_error('pasal') ? 'is-invalid':'' ?>"
                         type="text" name="pasal" placeholder="Pasal yang Dilanggar"  />
                         <div class="invalid-feedback">
@@ -50,7 +50,7 @@
                     <div class="form-group">
                         <label for="nomor_perkara">Nomor Seri Tilang*</label>
                         <input class="form-control <?php echo form_error('nomor_perkara') ? 'is-invalid':'' ?>"
-                        type="text" name="nomor_perkara" placeholder="Nomor Seri Tilang" />
+                        type="text" name="nomor_perkara" placeholder="Tersangka" />
                         <div class="invalid-feedback">
                             <?php echo form_error('nomor_perkara') ?>
                         </div>
@@ -68,7 +68,7 @@
                     <div class="form-group">
 							<label for="tgl_sidang">Tanggal Sidang*</label>
 							<input class="form-control <?php echo form_error('tgl_sidang') ? 'is-invalid':'' ?>"
-								name="tgl_sidang" placeholder="Tanggal Sidang" />
+								name="tgl_sidang" placeholder="Tanggal Sidang" ></input>
 							<div class="invalid-feedback">
 								<?php echo form_error('tgl_sidang') ?>
 							</div>
@@ -77,9 +77,18 @@
                     <div class="form-group">
 							<label for="status">Status*</label>
 							<input class="form-control <?php echo form_error('status') ? 'is-invalid':'' ?>"
-								name="status" placeholder="Tanggal Sidang" />
+								name="status" placeholder="Status" ></input>
 							<div class="invalid-feedback">
 								<?php echo form_error('status') ?>
+							</div>
+					</div>
+
+                    <div class="form-group">
+							<label for="keterangan">Keterangan*</label>
+							<textarea class="form-control <?php echo form_error('keterangan') ? 'is-invalid':'' ?>"
+								name="keterangan" placeholder="Keterangan" ></textarea>
+							<div class="invalid-feedback">
+								<?php echo form_error('keterangan') ?>
 							</div>
 					</div>
 

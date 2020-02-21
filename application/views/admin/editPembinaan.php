@@ -69,6 +69,7 @@
                     <option>Perdata & Tata Usaha</option>
                     <option>Barang Bukti</option>
                     <option>Pemeriksa</option>
+                    <option>Pimpinan</option>
                     </select>
                 </div>
 

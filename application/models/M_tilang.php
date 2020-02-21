@@ -58,7 +58,7 @@ class M_tilang extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->id_tilang = $post["id"];
+        $this->id_tilang = 'DEFAULT';
         $this->pasal = $post["pasal"];
         $this->tersangka = $post["tersangka"];
         $this->nomor_perkara = $post["nomor_perkara"];

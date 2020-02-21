@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- daterange picker -->
   <link rel="stylesheet" href="<?= base_url('assets'); ?>/dist/plugins/daterangepicker/daterangepicker.css">
+
+  <link rel="stylesheet" type="text/css" href="<?= base_url('assets'); ?>/summernote/summernote-bs4.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url('assets'); ?>/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -128,21 +130,9 @@
           </li>
           <li class="nav-header">Kelola Kegiatan</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="<?php echo base_url().'admin/admin_post'; ?>" <?php if ($this->uri->segment(2) == 'admin_post') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?>>
               <i class="far fa-file-alt"></i>
               <p>Tambah Kegiatan Bidang</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="far fa-file-alt"></i>
-              <p>Adyaksa Dharmakarin</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="far fa-file-alt"></i>
-              <p>WBK / WBMM</p>
             </a>
           </li>
         </ul>
@@ -187,6 +177,7 @@
 <script src="<?= base_url('assets'); ?>/dist/plugins/chart.js/Chart.min.js"></script>
 <script src="<?= base_url('assets'); ?>/dist/js/demo.js"></script>
 <script src="<?= base_url('assets'); ?>/dist/js/pages/dashboard3.js"></script>
+<script src="<?= base_url('assets'); ?>/summernote/summernote-bs4.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
 <script>

@@ -117,35 +117,93 @@
                     <tbody>
                       <tr>
                         <td>Pembinaan</td>
-                        <td><center> 2 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pegawai WHERE bidang="Pembinaan"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <td>Intelijen</td>
-                        <td><center> 5 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pegawai WHERE bidang="Intelijen"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <td>Pidana Umum</td>
-                        <td><center> 2 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pegawai WHERE bidang="Pidana Umum"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <td>Pidana Khusus</td>
-                        <td><center> 1 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pegawai WHERE bidang="Pidana Khusus"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <td>Perdata & Tata Usaha</td>
-                        <td><center> 2 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pegawai WHERE bidang="Perdata"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <td>Barang Bukti</td>
-                        <td><center> 2 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pegawai WHERE bidang="Barang Bukti"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <td>Pemeriksa</td>
-                        <td><center> 2 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pegawai WHERE bidang="Pemeriksa"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
+                      </tr>
+                      <tr>
+                        <td>Pimpinan</td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pegawai WHERE bidang="Pimpinan"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <th>Total</th>
-                        <td><center> 15 </center></td>
+                        <th>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pegawai'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </th>
                       </tr>
                     </tbody>
                   </table>

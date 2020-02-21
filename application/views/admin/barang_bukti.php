@@ -3,7 +3,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard</h1>
+            <h1 class="m-0 text-dark">Barang Bukti</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -110,23 +110,53 @@
                     <tbody>
                       <tr>
                         <td>Dimusnahkan</td>
-                        <td><center> 2 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM barang_bukti WHERE status="Dimusnahkan"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <td>Dirampas Negara</td>
-                        <td><center> 5 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM barang_bukti WHERE status="Dirampas Negara"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <td>Dikembalikan</td>
-                        <td><center> 2 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM barang_bukti WHERE status="Dikembalikan"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <td>Dilelang</td>
-                        <td><center> 1 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM barang_bukti WHERE status="Dilelang"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <th>Jumlah</th>
-                        <th><center> 5 </center></th>
+                        <th>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM barang_bukti'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </th>
                       </tr>
                     </tbody>
                   </table>

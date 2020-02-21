@@ -117,19 +117,43 @@
                     <tbody>
                       <tr>
                         <td>Belum Diproses</td>
-                        <td><center> 2 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pemeriksa WHERE status="Belum Diproses"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <td>Sedang Diproses</td>
-                        <td><center> 2 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pemeriksa WHERE status="Sedang Diproses"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <td>Selesai</td>
-                        <td><center> 2 </center></td>
+                        <td>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pemeriksa WHERE status="Selesai"'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </td>
                       </tr>
                       <tr>
                         <th>Jumlah</th>
-                        <th><center> 6 </center></th>
+                        <th>
+                        <center> 
+                            <?php 
+                            $query = $this->db->query('SELECT * FROM pemeriksa'); 
+                            echo $query->num_rows(); ?>
+                         </center>
+                         </th>
                       </tr>
                     </tbody>
                   </table>

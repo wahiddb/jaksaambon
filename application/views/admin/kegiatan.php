@@ -50,24 +50,33 @@
                     </thead>
                     <tbody>
 
-                    <!-- <?php
+                    <?php
                         $no = 0;
-                        foreach ($datun as $key => $datun) {?>
+                        foreach ($kegiatan as $key => $kegiatan) {?>
                             <tr>
                                 <td style="text-align:center;"><?php echo $no += 1; ?></td>
-                                <td style="text-align:center;"><?php echo $datun->pemohon ?></td>
-                                <td style="text-align:center;"><?php echo $datun->email ?></td>
-                                <td style="text-align:center;"><?php echo $datun->perihal ?></td>
-                                <td style="text-align:center;"><?php echo $datun->keterangan ?></td>
+                                <td style="text-align:center;"><?php echo $kegiatan->judul ?></td>
+                                <td style="text-align:center;"><?php echo $kegiatan->subjudul ?></td>
+                                <td style="text-align:center;"><?php echo $kegiatan->image ?></td>
+                                <td style="text-align:center;"><?php echo $kegiatan->konten ?></td>
                                 <td style="text-align:center;">
-                                    <!-- <a class="btn  btn-warning" href="<?php echo site_url('admin/admin_datun/edit/' .$datun->id_datun) ?>"  title="Edit"><span class="far fa-edit"></span> Edit</a> -->
-                                    <a onclick="deleteConfirm('<?php echo site_url('admin/admin_datun/delete/'.$datun->id_datun) ?>')" href="#!" class="btn  btn-danger" title="Hapus"><span class="far fa-trash-alt"></span> Hapus</a>
+                                    <!-- <a class="btn  btn-warning" href="<?php echo site_url('admin/admin_datun/edit/' .$kegiatan->id_post) ?>"  title="Edit"><span class="far fa-edit"></span> Edit</a> -->
+                                    <a onclick="deleteConfirm('<?php echo site_url('admin/admin_datun/delete/'.$kegiatan->id_post) ?>')" href="#!" class="btn  btn-danger" title="Hapus"><span class="far fa-trash-alt"></span> Hapus</a>
                                 </td>
                             </tr>
-                        <?php  }?> -->
+                        <?php  }?>
                 
                     </tbody>
                   </table>
+
+                  <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <h2><?php echo $kegiatan->judul ?></h2>
+                <article><?php echo $kegiatan->konten ?></article>
+            </div>
+        </div>
+    </div>
                 </div>
               </div>
             </div>

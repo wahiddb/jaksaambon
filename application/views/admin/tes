@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets'); ?>/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets'); ?>/summernote/summernote-bs4.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="<?php echo site_url('post/save');?>" method="post">
+                    <div class="form-group">
+                        <label for="judul">Judul Kegiatan</label>
+                        <input class="form-control <?php echo form_error('judul') ? 'is-invalid':'' ?>"
+                        type="text" name="judul" placeholder="Judul" />
+                        <div class="invalid-feedback">
+                            <?php echo form_error('judul') ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subjudul">Sub Judul</label>
+                        <input class="form-control <?php echo form_error('subjudul') ? 'is-invalid':'' ?>"
+                        type="text" name="subjudul" placeholder="Sub Judul" />
+                        <div class="invalid-feedback">
+                            <?php echo form_error('subjudul') ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+						<label for="image">Foto Judul</label>
+						<input class="form-control-file <?php echo form_error('image') ? 'is-invalid':'' ?>"
+						 type="file" name="image" />
+						<div class="invalid-feedback">
+						    <?php echo form_error('image') ?>
+						</div>
+					</div>
+
+                    <div class="form-group">
+                    <label for="inputDescription">Kategori</label>
+                    <select class="form-control custom-select <?php echo form_error('kategori') ? 'is-invalid':'' ?>"
+                            name="kategori" required>
+                    <option selected disabled>Pilih Bidang</option>
+                    <option>Pembinaan</option>
+                    <option>Intelijen</option>
+                    <option>Pidana Umum</option>
+                    <option>Pidana Khusus</option>
+                    <option>Perdata & Tata Usaha</option>
+                    <option>Barang Bukti</option>
+                    <option>Pemeriksa</option>
+                    <option>Adyaksa Dharmakarin</option>
+                    <option>WBK / WBMM</option>
+                    </select>
+                </div>
+
+                  <div class="form-group">
+                    <label>Konten</label>
+                    <textarea id="summernote" name="konten"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+ 
+    <script src="<?= base_url('assets'); ?>/dist/plugins/jquery/jquery.min.js"></script>
+    <script src="<?= base_url('assets'); ?>/dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('assets'); ?>/summernote/summernote-bs4.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#summernote').summernote({
+                height: "300px",
+                callbacks: {
+                    onImageUpload: function(image) {
+                        uploadImage(image[0]);
+                    },
+                    onMediaDelete : function(target) {
+                        deleteImage(target[0].src);
+                    }
+                }
+            });
+ 
+            function uploadImage(image) {
+                var data = new FormData();
+                data.append("image", image);
+                $.ajax({
+                    url: "<?php echo site_url('admin_post/upload_image')?>",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    type: "POST",
+                    success: function(url) {
+                        $('#summernote').summernote("insertImage", url);
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+            }
+ 
+            function deleteImage(src) {
+                $.ajax({
+                    data: {src : src},
+                    type: "POST",
+                    url: "<?php echo site_url('admin_post/delete_image')?>",
+                    cache: false,
+                    success: function(response) {
+                        console.log(response);
+                    }
+                });
+            }
+ 
+        });
+         
+    </script>
+</body>
+</html>
+
+
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+ 
+class Admin_post extends CI_Controller{
+     
+    function __construct(){
+        parent::__construct();
+        $this->load->model("m_post");
+        $this->load->library('upload');
+    }
+ 
+    function index(){
+        $this->template_admin->load('/admin/template_admin', '/admin/kegiatan');
+    }
+
+    public function add()
+    {
+        $post = $this->m_post;
+        $validation = $this->form_validation;
+        $validation->set_rules($post->rules());
+
+        if ($validation->run()) {
+            $post->save();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $this->template_admin->load('/admin/template_admin', '/admin/addKegiatan');
+    }
+
+    public function edit($id = null)
+    {
+        if (!isset($id)) redirect('admin/admin_post');
+       
+        $post = $this->m_post;
+        $validation = $this->form_validation;
+        $validation->set_rules($post->rules());
+
+        if ($validation->run()) {
+            $post->update();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $data["post"] = $post->getById($id);
+        if (!$data["post"]) show_404();
+        
+        $this->template_admin->load('/admin/template_admin', '/admin/editKegiatan', $data);
+    }
+
+    public function delete($id=null)
+    {
+        if (!isset($id)) show_404();
+        
+        if ($this->m_post->delete($id)) {
+            redirect(site_url('admin/admin_post'));
+        }
+    }
+ 
+    function save(){
+        $title = $this->input->post('title',TRUE);
+        $contents = $this->input->post('contents',TRUE);
+        $this->post_model->insert_post($title,$contents);
+        $id = $this->db->insert_id();
+        $result = $this->post_model->get_article_by_id($id)->row_array();
+        $data['title'] = $result['title'];
+        $data['contents'] = $result['contents'];
+        $this->load->view('post_detail_view', $data);
+    }
+ 
+    //Upload image summernote
+    function upload_image(){
+        if(isset($_FILES["image"]["name"])){
+            $config['upload_path'] = './assets/images/';
+            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $this->upload->initialize($config);
+            if(!$this->upload->do_upload('image')){
+                $this->upload->display_errors();
+                return FALSE;
+            }else{
+                $data = $this->upload->data();
+                //Compress Image
+                $config['image_library']='gd2';
+                $config['source_image']='./assets/images/'.$data['file_name'];
+                $config['create_thumb']= FALSE;
+                $config['maintain_ratio']= TRUE;
+                $config['quality']= '60%';
+                $config['width']= 800;
+                $config['height']= 800;
+                $config['new_image']= './assets/images/'.$data['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+                echo base_url().'assets/images/'.$data['file_name'];
+            }
+        }
+    }
+ 
+    //Delete image summernote
+    function delete_image(){
+        $src = $this->input->post('src');
+        $file_name = str_replace(base_url(), '', $src);
+        if(unlink($file_name))
+        {
+            echo 'File Delete Successfully';
+        }
+    }
+}

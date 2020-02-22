@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  
 class M_post extends CI_Model{
 
-    private $_table = "tilang";
+    private $_table = "post";
 
     public $id_post;
     public $kategori;
@@ -21,10 +21,6 @@ class M_post extends CI_Model{
 
             ['field' => 'judul',
             'label' => 'judul',
-            'rules' => 'required'],
-            
-            ['field' => 'image',
-            'label' => 'image',
             'rules' => 'required'],
 
             ['field' => 'subjudul',

@@ -179,6 +179,16 @@
 <script src="<?= base_url('assets'); ?>/dist/js/pages/dashboard3.js"></script>
 <script src="<?= base_url('assets'); ?>/summernote/summernote-bs4.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets'); ?>/ckeditor/ckeditor.js"></script>
+
+<script type="text/javascript">
+        $(function () {
+                CKEDITOR.replace('ckeditor',{
+                    filebrowserImageBrowseUrl : '<?= base_url('assets'); ?>/kcfinder/browse.php',
+                    height: '400px'             
+                });
+            });
+    </script>
 
 <script>
 $(document).ready( function () {

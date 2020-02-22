@@ -10,17 +10,18 @@ class Admin_post extends CI_Controller{
     }
  
     function index(){
-        $this->template_admin->load('/admin/template_admin', '/admin/kegiatan');
+        $data["kegiatan"] = $this->m_post->getAll();
+        $this->template_admin->load('/admin/template_admin', '/admin/kegiatan', $data);
     }
 
     public function add()
     {
-        $post = $this->m_post;
+        $kegiatan = $this->m_post;
         $validation = $this->form_validation;
-        $validation->set_rules($post->rules());
+        $validation->set_rules($kegiatan->rules());
 
         if ($validation->run()) {
-            $post->save();
+            $kegiatan->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
@@ -31,16 +32,16 @@ class Admin_post extends CI_Controller{
     {
         if (!isset($id)) redirect('admin/admin_post');
        
-        $post = $this->m_post;
+        $kegiatan = $this->m_post;
         $validation = $this->form_validation;
-        $validation->set_rules($post->rules());
+        $validation->set_rules($kegiatan->rules());
 
         if ($validation->run()) {
-            $post->update();
+            $kegiatan->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $data["post"] = $post->getById($id);
+        $data["post"] = $kegiatan->getById($id);
         if (!$data["post"]) show_404();
         
         $this->template_admin->load('/admin/template_admin', '/admin/editKegiatan', $data);
@@ -66,40 +67,4 @@ class Admin_post extends CI_Controller{
         $this->load->view('post_detail_view', $data);
     }
  
-    //Upload image summernote
-    function upload_image(){
-        if(isset($_FILES["image"]["name"])){
-            $config['upload_path'] = './assets/images/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $this->upload->initialize($config);
-            if(!$this->upload->do_upload('image')){
-                $this->upload->display_errors();
-                return FALSE;
-            }else{
-                $data = $this->upload->data();
-                //Compress Image
-                $config['image_library']='gd2';
-                $config['source_image']='./assets/images/'.$data['file_name'];
-                $config['create_thumb']= FALSE;
-                $config['maintain_ratio']= TRUE;
-                $config['quality']= '60%';
-                $config['width']= 800;
-                $config['height']= 800;
-                $config['new_image']= './assets/images/'.$data['file_name'];
-                $this->load->library('image_lib', $config);
-                $this->image_lib->resize();
-                echo base_url().'assets/images/'.$data['file_name'];
-            }
-        }
-    }
- 
-    //Delete image summernote
-    function delete_image(){
-        $src = $this->input->post('src');
-        $file_name = str_replace(base_url(), '', $src);
-        if(unlink($file_name))
-        {
-            echo 'File Delete Successfully';
-        }
-    }
 }

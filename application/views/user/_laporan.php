@@ -62,12 +62,15 @@
                         </div>
                         <div class="collapse show item-1" role="tabpanel" data-parent="#accordion-1 .item-1">
                             <div class="card-body">
-                                <a href="<?= base_url('intelijen'); ?>">
-                                    <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Pelayanan Pelaporan Masyarakat</p>
-                                </a>
-                                <a href="<?= base_url('intelijen/laporan'); ?>">
-                                    <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Perkembangan Laporan</p>
-                                </a>
+                                 <a href="<?= base_url('intelijen'); ?>">
+                                  <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Pelayanan Pelaporan Masyarakat</p>
+                              </a>
+ <a href="<?= base_url('intelijen/bantuan'); ?>">
+                                  <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Bantuan Hukum Gratis</p>
+                              </a>
+                              <a href="<?= base_url('intelijen/laporan'); ?>">
+                                  <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Perkembangan Laporan</p>
+                              </a>
 
                             </div>
                         </div>
@@ -119,6 +122,9 @@
                                         <th>
                                             <center>Status</center>
                                         </th>
+                                        <th>
+                                            <center>Keterangan Tambahan</center>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -142,6 +148,9 @@
                                             </td>
                                             <td>
                                                 <center><?= $data['status']; ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?= $data['ket_tambahan']; ?></center>
                                             </td>
 
                                         </tr>

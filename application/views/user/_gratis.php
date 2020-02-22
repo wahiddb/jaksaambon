@@ -1,4 +1,4 @@
-  <?php
+<?php
     include 'header.php' ?>
   <header class="masthead" style="background-image:url('<?= base_url('assets'); ?>/img/home.jpeg');">
       <div class="overlay"></div>
@@ -32,6 +32,7 @@
                               <a href="<?= base_url('intelijen/laporan'); ?>">
                                   <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Perkembangan Laporan</p>
                               </a>
+                             
 
                           </div>
                       </div>
@@ -45,7 +46,7 @@
                               <a href="__penyuluhan.html">
                                   <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Penyuluhan Dan Penerangan Hukum</p>
                               </a>
-                              <a href="<?= base_url('intelijen'); ?>">
+                              <a href="_<?= base_url('intelijen'); ?>">
                                   <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Kegiatan Bidang Intelijen</p>
                               </a>
                           </div>
@@ -54,8 +55,8 @@
               </div>
           </div>
           <div class="col col-md-6 col-lg-9">
-              <h1 style="text-align: center; margin-bottom: 40px;">Form Pelaporan Masyarakat</h1>
-              <form method="POST" action="<?= base_url('intelijen/input'); ?>">
+              <h1 style="text-align: center; margin-bottom: 40px;">Form Bantuan Hukum Gratis</h1>
+              <form method="POST" action="<?= base_url('intelijen/inputbantuan'); ?>">
                   <div class="form-group">
                       <label for="name">Nama Pelapor</label>
                       <input name="pelapor" type="text" class="form-control" id="name" aria-describedby="text" placeholder="Masukkan Nama Pelapor">

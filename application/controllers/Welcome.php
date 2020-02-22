@@ -22,4 +22,98 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('/user/index.php');
 	}
+
+	public function input()
+	{
+		$value = $this->input->post('rating');
+
+		if ($value==1) {
+			$data = array(
+				'value'	=> $this->input->post('rating'),
+				'ket'	=> 'Sangat Tidak Puas'
+			);
+			$data1 = array(
+				'coment'	=> $this->input->post('comment')
+			);
+			$this->db->insert('coment', $data1);
+			$this->db->insert('rating', $data);
+	
+			
+			$this->load->library('user_agent');
+if ($this->agent->is_referral()){
+    print_r($this->agent->referrer());
+}
+redirect($_SERVER['HTTP_REFERER']);
+
+		}
+		if ($value==2) {
+			$data = array(
+				'value'	=> $this->input->post('rating'),
+				'ket'	=> 'Tidak Puas'
+			);
+			$data1 = array(
+				'coment'	=> $this->input->post('comment')
+			);
+			$this->db->insert('coment', $data1);
+			$this->db->insert('rating', $data);
+	
+			$this->load->library('user_agent');
+if ($this->agent->is_referral()){
+    print_r($this->agent->referrer());
+}
+redirect($_SERVER['HTTP_REFERER']);
+		}
+		if ($value==3) {
+			$data = array(
+				'value'	=> $this->input->post('rating'),
+				'ket'	=> 'Kurang Puas'
+			);
+			$data1 = array(
+				'coment'	=> $this->input->post('comment')
+			);
+			$this->db->insert('coment', $data1);
+			$this->db->insert('rating', $data);
+	
+			$this->load->library('user_agent');
+if ($this->agent->is_referral()){
+    print_r($this->agent->referrer());
+}
+redirect($_SERVER['HTTP_REFERER']);
+		}
+		if ($value==4) {
+			$data = array(
+				'value'	=> $this->input->post('rating'),
+				'ket'	=> 'Puas'
+			);
+			$data1 = array(
+				'coment'	=> $this->input->post('comment')
+			);
+			$this->db->insert('coment', $data1);
+			$this->db->insert('rating', $data);
+	
+			$this->load->library('user_agent');
+if ($this->agent->is_referral()){
+    print_r($this->agent->referrer());
+}
+redirect($_SERVER['HTTP_REFERER']);
+		}
+		if ($value==5) {
+			$data = array(
+				'value'	=> $this->input->post('rating'),
+				'ket'	=> 'Sangat Puas'
+			);
+			$data1 = array(
+				'coment'	=> $this->input->post('comment')
+			);
+			$this->db->insert('coment', $data1);
+			$this->db->insert('rating', $data);
+	
+			$this->load->library('user_agent');
+if ($this->agent->is_referral()){
+    print_r($this->agent->referrer());
+}
+redirect($_SERVER['HTTP_REFERER']);
+		}
+		
+	}
 }

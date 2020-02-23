@@ -64,8 +64,8 @@
     </div>
     <!-- /.login-card-body -->
       <div class="text-center mb-3" style="margin-top: 32px;">
-        <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
+      <strong>Copyright &copy; 2020 </br> <a href="#">Kejaksaan Negeri Ambon</a></br></strong>
+    Rijali No. 9 Kecamatan Sirimau, Kota Ambon
       </div>
   </div>
 </div>

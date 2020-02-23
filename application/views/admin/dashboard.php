@@ -30,11 +30,15 @@
                     </tr>
                   </thead>
                   <tbody>
+                  <?php
+                        $no = 0;
+                        foreach ($rating as $key) {?>
                     <tr>
-                      <td><center>1</center></td>
-                      <td><center>Baugs</center></td>
-                      <td><center>Puas</center></td>
+                      <td><center><?php echo $no += 1; ?></center></td>
+                      <td><center><?php echo $key['comment'] ?></center></td>
+                      <td><center><?php echo $key['kepuasan'] ?></center></td>
                     </tr>
+                    <?php  }?>
                   </tbody>
                 </table>
               </div>
@@ -66,4 +70,5 @@
       <!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+    
 

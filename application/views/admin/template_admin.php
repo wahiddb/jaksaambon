@@ -71,7 +71,8 @@
             </a>
           </li>
           <li class="nav-header">KELOLA DATA</li>
-          <li class="nav-item">
+          <?php if ($this->session->userdata('level')==='1' || $this->session->userdata('level')==='6') { ?>
+            <li class="nav-item">
             <a href="<?php echo base_url().'admin/admin_pembinaan'; ?>" <?php if ($this->uri->segment(2) == 'admin_pembinaan') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?> >
               <i class="far fa-edit"></i>
               <p>
@@ -79,6 +80,9 @@
               </p>
             </a>
           </li>
+          <?php } ?>
+          
+          <?php if ($this->session->userdata('level')==='1' || $this->session->userdata('level')==='5') { ?>
           <li class="nav-item">
             <a href="<?php echo base_url().'admin/admin_intel'; ?>" <?php if ($this->uri->segment(2) == 'admin_intel') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?> >
               <i class="far fa-edit"></i>
@@ -87,6 +91,9 @@
               </p>
             </a>
           </li>
+          <?php } ?>
+
+          <?php if ($this->session->userdata('level')==='1' || $this->session->userdata('level')==='9') { ?>
           <li class="nav-item">
             <a href="<?php echo base_url().'admin/admin_pidum'; ?>" <?php if ($this->uri->segment(2) == 'admin_pidum') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?> >
               <i class="far fa-edit"></i>
@@ -95,6 +102,9 @@
               </p>
             </a>
           </li>
+          <?php } ?>
+
+          <?php if ($this->session->userdata('level')==='1' || $this->session->userdata('level')==='8') { ?>
           <li class="nav-item">
             <a href="<?php echo base_url().'admin/admin_pidsus'; ?>" <?php if ($this->uri->segment(2) == 'admin_pidsus') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?> >
               <i class="far fa-edit"></i>
@@ -103,6 +113,9 @@
               </p>
             </a>
           </li>
+          <?php } ?>
+
+          <?php if ($this->session->userdata('level')==='1' || $this->session->userdata('level')==='4') { ?>
           <li class="nav-item">
             <a href="<?php echo base_url().'admin/admin_datun'; ?>" <?php if ($this->uri->segment(2) == 'admin_datun') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?> >
               <i class="far fa-edit"></i>
@@ -112,6 +125,9 @@
               <p> Tata Usaha</p>
             </a>
           </li>
+          <?php } ?>
+
+          <?php if ($this->session->userdata('level')==='1' || $this->session->userdata('level')==='3') { ?>
           <li class="nav-item">
             <a href="<?php echo base_url().'admin/admin_barbuk'; ?>" <?php if ($this->uri->segment(2) == 'admin_barbuk') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?> >
               <i class="far fa-edit"></i>
@@ -120,6 +136,9 @@
               </p>
             </a>
           </li>
+          <?php } ?>
+
+          <?php if ($this->session->userdata('level')==='1' || $this->session->userdata('level')==='7') { ?>
           <li class="nav-item">
             <a href="<?php echo base_url().'admin/admin_pemeriksa'; ?>" <?php if ($this->uri->segment(2) == 'admin_pemeriksa') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?> >
               <i class="far fa-edit"></i>
@@ -128,6 +147,7 @@
               </p>
             </a>
           </li>
+          <?php } ?>
           <li class="nav-header">Kelola Kegiatan</li>
           <li class="nav-item">
             <a href="<?php echo base_url().'admin/admin_post'; ?>" <?php if ($this->uri->segment(2) == 'admin_post') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?>>
@@ -155,11 +175,8 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.2
-    </div>
+    <strong>Copyright &copy; 2020 <a href="#">Kejaksaan Negeri Ambon</a>.</strong>
+    Rijali No. 9 Kecamatan Sirimau, Kota Ambon
   </footer>
 </div>
 <!-- ./wrapper -->
@@ -176,7 +193,7 @@
 <!-- OPTIONAL SCRIPTS -->
 <script src="<?= base_url('assets'); ?>/dist/plugins/chart.js/Chart.min.js"></script>
 <script src="<?= base_url('assets'); ?>/dist/js/demo.js"></script>
-<script src="<?= base_url('assets'); ?>/dist/js/pages/dashboard3.js"></script>
+<script src="<?= base_url('assets'); ?>/dist/js/chart.js"></script>
 <script src="<?= base_url('assets'); ?>/summernote/summernote-bs4.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="<?= base_url('assets'); ?>/ckeditor/ckeditor.js"></script>
@@ -197,5 +214,61 @@ $(document).ready( function () {
 } );
 
 </script>
+
+<script> 
+          $(function () {
+      'use strict'
+
+      var ticksStyle = {
+        fontColor: '#495057',
+        fontStyle: 'bold'
+      }
+
+      var mode      = 'index'
+      var intersect = true
+
+      var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+        var donutData        = {
+          labels: [
+              'Sangat Tidak Puas', 
+              'Tidak Puas',
+              'Biasa', 
+              'Puas', 
+              'Sangat Puas', 
+          ],
+          datasets: [
+            {
+              data: [
+                <?php 
+                            $satu = $this->db->query('SELECT * FROM rating WHERE kepuasan="Sangat Tidak Puas"');
+                            $dua = $this->db->query('SELECT * FROM rating WHERE kepuasan="Kurang Puas"');
+                            $tiga = $this->db->query('SELECT * FROM rating WHERE kepuasan="Biasa"');
+                            $empat = $this->db->query('SELECT * FROM rating WHERE kepuasan="Puas"');
+                            $lima = $this->db->query('SELECT * FROM rating WHERE kepuasan="Sangat Puas"');
+                            ?>
+                <?php echo $satu->num_rows(); ?>,
+                <?php echo $dua->num_rows(); ?>,
+                <?php echo $tiga->num_rows(); ?>,
+                <?php echo $empat->num_rows(); ?>,
+                <?php echo $lima->num_rows(); ?>
+              ],
+              backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+            }
+          ]
+        }
+        var donutOptions     = {
+          maintainAspectRatio : false,
+          responsive : true,
+        }
+        //Create pie or douhnut chart
+        // You can switch between pie and douhnut using the method below.
+        var donutChart = new Chart(donutChartCanvas, {
+          type: 'doughnut',
+          data: donutData,
+          options: donutOptions      
+        })
+    })
+
+    </script>
 </body>
 </html>

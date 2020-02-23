@@ -65,7 +65,7 @@ redirect($_SERVER['HTTP_REFERER']);
 		if ($value==3) {
 			$data = array(
 				'comment'	=> $this->input->post('comment'),
-				'kepuasan'	=> 'Kurang Puas'
+				'kepuasan'	=> 'Biasa'
 			);
 			
 			

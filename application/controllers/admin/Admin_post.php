@@ -10,7 +10,49 @@ class Admin_post extends CI_Controller{
     }
  
     function index(){
-        $data["kegiatan"] = $this->m_post->getAll();
+        if($this->session->userdata('level')==='1'){
+			$data["kegiatan"] = $this->m_post->getAll();
+		}
+        
+        if($this->session->userdata('level')==='2'){
+			$query = $this->db->query('SELECT * FROM post WHERE kategori = "Adyaksa Dharmakarin"'); 
+            $data['kegiatan'] = $query->result();
+        }
+        
+        if($this->session->userdata('level')==='3'){
+			$query = $this->db->query('SELECT * FROM post WHERE kategori = "Barang Bukti"'); 
+            $data['kegiatan'] = $query->result();
+        }
+        
+        if($this->session->userdata('level')==='4'){
+			$query = $this->db->query('SELECT * FROM post WHERE kategori = "Perdata & Tata Usaha"'); 
+            $data['kegiatan'] = $query->result();
+        }
+        
+        if($this->session->userdata('level')==='5'){
+			$query = $this->db->query('SELECT * FROM post WHERE kategori = "Intelijen"'); 
+            $data['kegiatan'] = $query->result();
+        }
+        
+        if($this->session->userdata('level')==='6'){
+			$query = $this->db->query('SELECT * FROM post WHERE kategori = "Pembinaan"'); 
+            $data['kegiatan'] = $query->result();
+        }
+        
+        if($this->session->userdata('level')==='7'){
+			$query = $this->db->query('SELECT * FROM post WHERE kategori = "Pemeriksa"'); 
+            $data['kegiatan'] = $query->result();
+        }
+        
+        if($this->session->userdata('level')==='8'){
+			$query = $this->db->query('SELECT * FROM post WHERE kategori = "Pidana Khusus"'); 
+            $data['kegiatan'] = $query->result();
+        }
+        
+        if($this->session->userdata('level')==='9'){
+			$query = $this->db->query('SELECT * FROM post WHERE kategori = "Pidana Umum"'); 
+            $data['kegiatan'] = $query->result();
+		}
         $this->template_admin->load('/admin/template_admin', '/admin/kegiatan', $data);
     }
 

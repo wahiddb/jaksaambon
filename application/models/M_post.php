@@ -40,7 +40,12 @@ class M_post extends CI_Model{
     
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["id_post" => $id])->row();
+        return $this->db->get_where($this->_table, ["kategori" => $id])->row();
+    }
+
+    public function getCategory($category)
+    {
+        return $this->db->get_where($this->_table, ["kategori" => $category])->row();
     }
 
     public function save()

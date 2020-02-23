@@ -7,7 +7,9 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		if($this->session->userdata('logged_in')){
-			$this->template_admin->load('/admin/template_admin', '/admin/dashboard');
+			$query = $this->db->query('SELECT * FROM rating'); 
+            $data['rating'] = $query->result_array();
+			$this->template_admin->load('/admin/template_admin', '/admin/dashboard', $data);
 		} else{
 			echo "<script>
 			alert('Access Denied ! ');

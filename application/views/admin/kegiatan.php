@@ -58,7 +58,7 @@
                                 <td style="text-align:center;"><?php echo $kegiatan->judul ?></td>
                                 <td style="text-align:center;"><?php echo $kegiatan->subjudul ?></td>
                                 <td style="text-align:center;"><?php echo $kegiatan->image ?></td>
-                                <td style="text-align:center;"><?php echo $kegiatan->konten ?></td>
+                                <td style="text-align:center;"><?php echo $kegiatan->kategori ?></td>
                                 <td style="text-align:center;">
                                     <!-- <a class="btn  btn-warning" href="<?php echo site_url('admin/admin_datun/edit/' .$kegiatan->id_post) ?>"  title="Edit"><span class="far fa-edit"></span> Edit</a> -->
                                     <a onclick="deleteConfirm('<?php echo site_url('admin/admin_datun/delete/'.$kegiatan->id_post) ?>')" href="#!" class="btn  btn-danger" title="Hapus"><span class="far fa-trash-alt"></span> Hapus</a>
@@ -68,15 +68,6 @@
                 
                     </tbody>
                   </table>
-
-                  <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-md-8">
-                <h2><?php echo $kegiatan->judul ?></h2>
-                <article><?php echo $kegiatan->konten ?></article>
-            </div>
-        </div>
-    </div>
                 </div>
               </div>
             </div>

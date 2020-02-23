@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2020 at 02:12 AM
+-- Generation Time: Feb 23, 2020 at 12:42 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.1.33
 
@@ -96,15 +96,17 @@ CREATE TABLE `datun` (
   `pemohon` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `perihal` varchar(255) NOT NULL,
-  `keterangan` varchar(255) NOT NULL
+  `keterangan` varchar(255) NOT NULL,
+  `ket_tambahan` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `datun`
 --
 
-INSERT INTO `datun` (`id_datun`, `pemohon`, `email`, `perihal`, `keterangan`) VALUES
-(1, 'wahid', 'email', 'perihal', 'ket');
+INSERT INTO `datun` (`id_datun`, `pemohon`, `email`, `perihal`, `keterangan`, `ket_tambahan`) VALUES
+(1, 'wahid', 'email', 'perihal', 'ket', NULL),
+(2, 'wahid', 'wahid.110887@gmail.co.id', 'perihal', 'ketr', 'gratis');
 
 -- --------------------------------------------------------
 
@@ -121,17 +123,16 @@ CREATE TABLE `intel` (
   `email` varchar(50) NOT NULL,
   `tindak_pidana` varchar(255) NOT NULL,
   `keterangan` varchar(255) NOT NULL,
-  `status` varchar(25) NOT NULL,
-  `ket_tambahan` varchar(255) DEFAULT NULL
+  `status` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `intel`
 --
 
-INSERT INTO `intel` (`id_intel`, `pelapor`, `terlapor`, `identitas`, `no_identitas`, `email`, `tindak_pidana`, `keterangan`, `status`, `ket_tambahan`) VALUES
-(5, 'wahid', 'dia', 'ktp', 1707, 'wahid.110887@gmail.co.id', 'maling', 'tolong', 'Belum di Proses', NULL),
-(6, 'aaaa', 'dia', 'ktp', 3, 'wahid.110asdas887@gmail.com', 'maling', 'asdasdas', 'Belum di Proses', 'Bantuan Hukum Gratis');
+INSERT INTO `intel` (`id_intel`, `pelapor`, `terlapor`, `identitas`, `no_identitas`, `email`, `tindak_pidana`, `keterangan`, `status`) VALUES
+(5, 'wahid', 'dia', 'ktp', 1707, 'wahid.110887@gmail.co.id', 'maling', 'tolong', 'Belum di Proses'),
+(6, 'aaaa', 'dia', 'ktp', 3, 'wahid.110asdas887@gmail.com', 'maling', 'asdasdas', 'Belum di Proses');
 
 -- --------------------------------------------------------
 
@@ -371,7 +372,7 @@ ALTER TABLE `coment`
 -- AUTO_INCREMENT for table `datun`
 --
 ALTER TABLE `datun`
-  MODIFY `id_datun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_datun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `intel`

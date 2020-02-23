@@ -64,9 +64,7 @@
                                  <a href="<?= base_url('intelijen'); ?>">
                                   <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Pelayanan Pelaporan Masyarakat</p>
                               </a>
- <a href="<?= base_url('intelijen/bantuan'); ?>">
-                                  <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Bantuan Hukum Gratis</p>
-                              </a>
+
                               <a href="<?= base_url('intelijen/laporan'); ?>">
                                   <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Perkembangan Laporan</p>
                               </a>

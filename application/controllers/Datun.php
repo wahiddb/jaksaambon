@@ -16,6 +16,11 @@ class Datun extends CI_Controller
 		$this->load->view('/user/__jaksa.php');
 	}
 
+	public function bantuan()
+	{
+		$this->load->view('/user/_gratis.php');
+	}
+
 
 	public function input()
 	{
@@ -24,6 +29,20 @@ class Datun extends CI_Controller
 			'email'	=> $this->input->post('email'),
 			'perihal'	=> $this->input->post('perihal'),
 			'keterangan'	=> $this->input->post('keterangan')
+		);
+		$this->db->insert('datun', $data);
+
+		redirect('datun');
+	}
+
+	public function inputbantuan()
+	{
+		$data = array(
+			'pemohon'	=> $this->input->post('pemohon'),
+			'email'	=> $this->input->post('email'),
+			'perihal'	=> $this->input->post('perihal'),
+			'keterangan'	=> $this->input->post('keterangan'),
+			'ket_tambahan'	=> 'gratis'
 		);
 		$this->db->insert('datun', $data);
 

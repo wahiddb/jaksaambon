@@ -26,6 +26,9 @@
                               <a href="<?= base_url('datun'); ?>">
                                   <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Permohonan Bantuan Hukum</p>
                               </a>
+<a href="<?= base_url('datun/bantuan'); ?>">
+                                  <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Permohonan Bantuan Hukum Gratis</p>
+                              </a>
                               <a href="<?= base_url('datun/profil'); ?>">
                                   <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Profil Jaksa Pengacara Negara</p>
                               </a>

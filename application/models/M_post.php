@@ -46,7 +46,7 @@ class M_post extends CI_Model{
     public function save()
     {
         $post = $this->input->post();
-        $this->id_post = uniqid();
+        $this->id_post = 3;
         $this->judul = $post["judul"];
 		$this->subjudul = $post["subjudul"];
 		$this->image = $this->_uploadImage();

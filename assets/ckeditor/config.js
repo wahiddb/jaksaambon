@@ -3,7 +3,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.filebrowserBrowseUrl = 'http://localhost/jaksaambon/assets/kcfinder/browse.php?type=files';
     config.filebrowserImageBrowseUrl = 'http://localhost/jaksaambon/assets/kcfinder/browse.php?type=images';
     config.filebrowserFlashBrowseUrl = 'http://localhost/jaksaambon/assets/kcfinder/browse.php?type=flash';
-    config.filebrowserUploadUrl = 'http://localhost/assets/jaksaambon/kcfinder/upload.php?type=files';
+    config.filebrowserUploadUrl = 'http://localhost/jaksaambon/assets/kcfinder/upload.php?type=files';
     config.filebrowserImageUploadUrl = 'http://localhost/jaksaambon/assets/kcfinder/upload.php?type=images';
     config.filebrowserFlashUploadUrl = 'http://localhost/jaksaambon/assets/kcfinder/upload.php?type=flash';
  

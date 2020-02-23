@@ -53,7 +53,7 @@
               </div>
           </div>
           <div class="col col-md-6 col-lg-9">
-              <h1 style="text-align: center; margin-bottom: 40px;">Perkembangan Laporan</h1>
+              <h1 style="text-align: center; margin-bottom: 40px;">Informasi Barang Bukti</h1>
               <div class="card shadow" style="margin-top: 10px;">
                   <div class="card-header py-3">
                       <p class="text-primary m-0 font-weight-bold">Data Barang Bukti Dikembalikan</p>
@@ -86,31 +86,34 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <!-- <?php $i = 1; ?>
-                                  <?php foreach ($intel as $data) : ?>
+                              <?php $i = 1; ?>
+                                  <?php foreach ($kembali as $data) : ?>
                                       <tr>
                                           <td>
                                               <center><?= $i; ?></center>
                                           </td>
                                           <td>
-                                              <center><?= $data['pelapor']; ?></center>
+                                              <center><?= $data['tersangka']; ?></center>
                                           </td>
                                           <td>
-                                              <center><?= $data['terlapor']; ?></center>
+                                              <center><?= $data['no_perkara']; ?></center>
                                           </td>
                                           <td>
-                                              <center><?= $data['tindak_pidana']; ?></center>
+                                              <center><?= $data['jenis']; ?></center>
                                           </td>
                                           <td>
-                                              <center><?= $data['keterangan']; ?></center>
+                                              <center><?= $data['jumlah']; ?></center>
                                           </td>
                                           <td>
                                               <center><?= $data['status']; ?></center>
                                           </td>
+                                           <td>
+                                              <center><?= $data['keterangan']; ?></center>
+                                          </td>
 
                                       </tr>
                                       <?php $i++; ?>
-                                  <?php endforeach; ?> -->
+                                  <?php endforeach; ?>
                               </tbody>
                           </table>
                       </div>

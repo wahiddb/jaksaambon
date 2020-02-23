@@ -86,31 +86,34 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <!-- <?php $i = 1; ?>
-                                    <?php foreach ($intel as $data) : ?>
-                                        <tr>
-                                            <td>
-                                                <center><?= $i; ?></center>
-                                            </td>
-                                            <td>
-                                                <center><?= $data['pelapor']; ?></center>
-                                            </td>
-                                            <td>
-                                                <center><?= $data['terlapor']; ?></center>
-                                            </td>
-                                            <td>
-                                                <center><?= $data['tindak_pidana']; ?></center>
-                                            </td>
-                                            <td>
-                                                <center><?= $data['keterangan']; ?></center>
-                                            </td>
-                                            <td>
-                                                <center><?= $data['status']; ?></center>
-                                            </td>
+                              <?php $i = 1; ?>
+                                  <?php foreach ($rampas as $data) : ?>
+                                      <tr>
+                                          <td>
+                                              <center><?= $i; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['tersangka']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['no_perkara']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['jenis']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['jumlah']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['status']; ?></center>
+                                          </td>
+                                           <td>
+                                              <center><?= $data['keterangan']; ?></center>
+                                          </td>
 
-                                        </tr>
-                                        <?php $i++; ?>
-                                    <?php endforeach; ?> -->
+                                      </tr>
+                                      <?php $i++; ?>
+                                  <?php endforeach; ?>
                               </tbody>
                           </table>
                       </div>

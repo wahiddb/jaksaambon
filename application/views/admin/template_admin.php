@@ -155,6 +155,18 @@
               <p>Tambah Kegiatan Bidang</p>
             </a>
           </li>
+
+          <?php if ($this->session->userdata('level')==='1') { ?>
+          <li class="nav-item">
+            <a href="<?php echo base_url().'admin/admin_profil'; ?>" <?php if ($this->uri->segment(2) == 'admin_profil') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?> >
+              <i class="far fa-edit"></i>
+              <p>
+                Bidang Barang Bukti
+              </p>
+            </a>
+          </li>
+          <?php } ?>
+          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

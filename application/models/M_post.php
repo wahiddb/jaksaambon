@@ -51,7 +51,7 @@ class M_post extends CI_Model{
     public function save()
     {
         $post = $this->input->post();
-        $this->id_post = 3;
+        $this->id_post = 'DEFAULT';
         $this->judul = $post["judul"];
 		$this->subjudul = $post["subjudul"];
 		$this->image = $this->_uploadImage();
@@ -87,9 +87,9 @@ class M_post extends CI_Model{
 	
 	private function _uploadImage()
 	{
-		$config['upload_path']          = './assets/images';
-		$config['allowed_types']        = 'gif|jpg|png';
-		$config['file_name']            = $this->id_post;
+		$config['upload_path']          = './assets/images/';
+		$config['allowed_types']        = 'gif|jpg|png|jpeg';
+		$config['file_name']            = $this->judul;
 		$config['overwrite']			= true;
 		$config['max_size']             = 1024; // 1MB
 		// $config['max_width']            = 1024;
@@ -97,11 +97,14 @@ class M_post extends CI_Model{
 
 		$this->load->library('upload', $config);
 
-		if ($this->upload->do_upload('image')) {
+		if ( ! $this->upload->do_upload('image')) {
+            return $this->upload->display_errors();
+		}else {
+            
 			return $this->upload->data("file_name");
-		}
+        }
 		
-		return "default.jpg";
+		// return "default.jpg";
 	}
 
 	private function _deleteImage($id)

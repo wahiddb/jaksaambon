@@ -6,7 +6,6 @@ class Admin_post extends CI_Controller{
     function __construct(){
         parent::__construct();
         $this->load->model("m_post");
-        $this->load->library('upload');
     }
  
     function index(){

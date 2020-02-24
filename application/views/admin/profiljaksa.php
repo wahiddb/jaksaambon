@@ -3,7 +3,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Kelola Kegiatan</h1>
+            <h1 class="m-0 text-dark">Kelola Halaman Profil Jaksa Negara</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -15,14 +15,14 @@
       <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-        <a href="<?php echo site_url('admin/admin_post/add') ?>"><button type="button" class="btn btn-info" ><i class="far fa-plus-square"> Tambah Kegiatan Baru</i></button></a>
+        <a href="<?php echo site_url('admin/admin_profil/add') ?>"><button type="button" class="btn btn-info" ><i class="far fa-plus-square"> Edit Halaman</i></button></a>
           </div>
         </div><!-- /.row -->
         <div class="row">
           <div class="col-lg-12">
             <div class="card">
               <div class="card-header">
-                  <h3 class="card-title">Daftar Kegiatan Bidang</h3>
+                  <h3 class="card-title">Profil Jaksa Negara</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                     <i class="fas fa-minus"></i></button>
@@ -52,16 +52,16 @@
 
                     <?php
                         $no = 0;
-                        foreach ($kegiatan as $key => $kegiatan) {?>
+                        foreach ($profil as $key => $profil) {?>
                             <tr>
                                 <td style="text-align:center;"><?php echo $no += 1; ?></td>
-                                <td style="text-align:center;"><?php echo $kegiatan->judul ?></td>
-                                <td style="text-align:center;"><?php echo $kegiatan->subjudul ?></td>
-                                <td style="text-align:center;"><img src="<?= base_url('assets/images/'); ?><?php echo $kegiatan->image ?>" alt="Image Judul" style="width:150px; height:150px"></td>
-                                <td style="text-align:center;"><?php echo $kegiatan->kategori ?></td>
+                                <td style="text-align:center;"><?php echo $profil->judul ?></td>
+                                <td style="text-align:center;"><?php echo $profil->subjudul ?></td>
+                                <td style="text-align:center;"><img src="<?= base_url('assets/images/'); ?><?php echo $profil->image ?>" alt="Image Judul" style="width:150px; height:150px"></td>
+                                <td style="text-align:center;"><?php echo $profil->kategori ?></td>
                                 <td style="text-align:center;">
-                                    <!-- <a class="btn  btn-warning" href="<?php echo site_url('admin/admin_datun/edit/' .$kegiatan->id_post) ?>"  title="Edit"><span class="far fa-edit"></span> Edit</a> -->
-                                    <a onclick="deleteConfirm('<?php echo site_url('admin/admin_post/delete/'.$kegiatan->id_post) ?>')" href="#!" class="btn  btn-danger" title="Hapus"><span class="far fa-trash-alt"></span> Hapus</a>
+                                    <!-- <a class="btn  btn-warning" href="<?php echo site_url('admin/admin_datun/edit/' .$profil->id_post) ?>"  title="Edit"><span class="far fa-edit"></span> Edit</a> -->
+                                    <a onclick="deleteConfirm('<?php echo site_url('admin/admin_post/delete/'.$profil->id_post) ?>')" href="#!" class="btn  btn-danger" title="Hapus"><span class="far fa-trash-alt"></span> Hapus</a>
                                 </td>
                             </tr>
                         <?php  }?>

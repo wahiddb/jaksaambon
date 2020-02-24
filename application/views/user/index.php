@@ -18,7 +18,7 @@
 </head>
 
 <body id="page-top">
-    <header class="d-flex masthead" style="background-color: #339e35;background-image: url(&quot;assets/img/home.jpeg&quot;);">
+    <header class="d-flex masthead" style="background-color: #339e35;background-image: url(&quot;assets/img/bg_fix.png&quot;);">
         <div class="container my-auto text-center" style="color: rgb(255,255,255);"><img class="mb-2" src="<?= base_url('assets'); ?>/img/jaksa.png" height="25%" width="25%">
             <h2 class="mb-1" style="font-size: 62px;color: rgb(255,255,255);">Kejaksaan Negeri Ambon</h2>
             <h5 class="mb-5"><em style="color: rgb(255,255,255);">Sistem Informasi Kejaksaan Negeri Ambon</em></h5><a class="btn btn-warning border-success shadow-lg btn-xl js-scroll-trigger" role="button" data-bs-hover-animate="swing" href="#menu" style="color: #30383a;background-color: rgb(0,154,68);">Mulai</a>

@@ -39,7 +39,7 @@
         </div>
         </div>
     </nav>
-    <header class="masthead" style="background-image:url('<?= base_url('assets'); ?>/img/home.jpeg');">
+    <header class="masthead" style="background-image:url('<?= base_url('assets'); ?>/img/bg_fix.png');">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">

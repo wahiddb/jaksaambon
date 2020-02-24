@@ -6,12 +6,12 @@ class Pemeriksaan extends CI_Controller
 
 
 	public function index()
-	{
-		$this->load->view('/user/_periksa.php');
+	{$data['title'] = "Pemeriksaan";
+		$this->load->view('/user/_periksa.php',$data);
 	}
 
 	public function laporan()
-	{
+	{$data['title'] = "Pemeriksaan";
 		$data['pemeriksa'] = $this->db->get('pemeriksa')->result_array();
 		$this->load->view('/user/_laporanpegawai.php', $data);
 	}

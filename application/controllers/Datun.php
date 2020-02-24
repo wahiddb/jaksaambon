@@ -6,19 +6,27 @@ class Datun extends CI_Controller
 
 
 	public function index()
-	{
-		$this->load->view('/user/_datun.php');
+	{	$data['title'] = "Perdata & Tata Usaha";
+		$this->load->view('/user/_datun.php',$data);
 	}
 
 
 	public function profil()
-	{
-		$this->load->view('/user/__jaksa.php');
+	{$data['title'] = "Perdata & Tata Usaha";
+		
+		$this->db->select('*');
+		$this->db->from('post');
+		$this->db->where("kategori","Jaksa Negara");
+		$query2=$this->db->get();
+		$data['pos'] = $query2->result_array();
+		
+
+		$this->load->view('/user/post.php',$data);
 	}
 
 	public function bantuan()
-	{
-		$this->load->view('/user/_gratis.php');
+	{$data['title'] = "Perdata & Tata Usaha";
+		$this->load->view('/user/_gratis.php',$data);
 	}
 
 

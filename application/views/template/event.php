@@ -12,7 +12,7 @@
                             <div class="col-8">
                                 <h4 class="post-title"><?= $data['judul']; ?></h4>
                                 <h4 class="post-subtitle" style="font-weight: lighter;"><?= $data['subjudul']; ?></h4>
-                                <h6 class="post-meta" style="font-style: oblique; font-weight: inherit;">September 24, 2018</h6>
+                                
                             </div>
                         </div>
                     </a>

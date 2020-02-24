@@ -26,7 +26,7 @@
 		<div class="col-md-12">
     	<div class="well well-sm">
             <div class="text-right">
-                <a class="btn btn-success btn-green" href="#reviews-anchor" id="open-review-box">Bagai</a>
+                <a class="btn btn-success btn-green" href="#reviews-anchor" id="open-review-box">Apakah Informasi yang disampaikan Memuaskan ?</a>
             </div>
         
             <div class="row" id="post-review-box" style="display:none;">

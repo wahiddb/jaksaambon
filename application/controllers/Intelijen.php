@@ -10,18 +10,18 @@ class Intelijen extends CI_Controller
 	}
 
 	public function index()
-	{
-		$this->load->view('/user/_intel.php');
+	{$data['title'] = "Intelijen";
+		$this->load->view('/user/_intel.php',$data);
 	}
 
 	public function bantuan()
-	{
-		$this->load->view('/user/_gratis.php');
+	{$data['title'] = "Intelijen";
+		$this->load->view('/user/_gratis.php',$data);
 	}
 
 	public function laporan()
 	{
-
+		$data['title'] = "Intelijen";
 		$data['intel'] = $this->db->get('intel')->result_array();
 		$this->load->view('/user/_laporan.php', $data);
 	}

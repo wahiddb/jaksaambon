@@ -41,7 +41,7 @@
                       </div>
                       <div class="collapse show item-2" role="tabpanel" data-parent="#accordion-1">
                           <div class="card-body">
-                              <a href="_<?= base_url('barangbukti'); ?>">
+                              <a href="<?= base_url('event/bb'); ?>">
                                   <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Kegiatan Barang Bukti</p>
                               </a>
                           </div>

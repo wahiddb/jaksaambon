@@ -23,7 +23,7 @@
                       </div>
                       <div class="collapse show item-1" role="tabpanel" data-parent="#accordion-1">
                           <div class="card-body">
-                              <a href="#">
+                               <a href="<?= base_url('event/wbk'); ?>">
                                   <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Kegiatan WBK / WBMM</p>
                               </a>
                           </div>

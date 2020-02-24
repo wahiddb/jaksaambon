@@ -77,12 +77,12 @@
                         </div>
                         <div class="collapse show item-2" role="tabpanel" data-parent="#accordion-1 .item-2">
                             <div class="card-body">
-                                <a href="__penyuluhan.html">
-                                    <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Penyuluhan Dan Penerangan Hukum</p>
-                                </a>
-                                <a href="_<?= base_url('intelijen'); ?>">
-                                    <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Kegiatan Bidang Intelijen</p>
-                                </a>
+                                <a href="<?= base_url('event/penyuluhan'); ?>">
+                                  <p class="card-text" style="font-size: 14px;margin-top: 0px;margin-bottom: 0px;">Penyuluhan Dan Penerangan Hukum</p>
+                              </a>
+                                <a href="<?= base_url('event/intelijen'); ?>">
+                                  <p class="card-text" style="font-size: 14px;margin-top: 8px;margin-bottom: 0px;">Kegiatan Bidang Intelijen</p>
+                              </a>
                             </div>
                         </div>
                     </div>

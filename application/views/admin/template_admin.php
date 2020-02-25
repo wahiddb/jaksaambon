@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="<?= base_url('assets'); ?>/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -161,7 +162,7 @@
             <a href="<?php echo base_url().'admin/admin_profil'; ?>" <?php if ($this->uri->segment(2) == 'admin_profil') {echo 'class="nav-link active"';} else echo 'class="nav-link"' ?> >
               <i class="far fa-edit"></i>
               <p>
-                Bidang Barang Bukti
+                Profil Jaksa Negara
               </p>
             </a>
           </li>

@@ -13,15 +13,21 @@ class Datun extends CI_Controller
 
 	public function profil()
 	{$data['title'] = "Perdata & Tata Usaha";
-		
 		$this->db->select('*');
 		$this->db->from('post');
 		$this->db->where("kategori","Jaksa Negara");
 		$query2=$this->db->get();
-		$data['pos'] = $query2->result_array();
+		if (! $query2->num_rows() == 0) {
+			$data['pos'] = $query2->result_array();
+			$data['query'] = true;
+			$this->load->view('/user/profil.php',$data);
+		} else {
+			
+			$data['query'] = false;
+			$this->load->view('/user/profil.php', $data);
+		}
 		
-
-		$this->load->view('/user/post.php',$data);
+		
 	}
 
 	public function bantuan()

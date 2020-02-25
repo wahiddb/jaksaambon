@@ -11,6 +11,7 @@ class M_post extends CI_Model{
     public $image;
     public $subjudul;
     public $konten;
+    public $date;
 
     public function rules()
     {
@@ -56,7 +57,8 @@ class M_post extends CI_Model{
 		$this->subjudul = $post["subjudul"];
 		$this->image = $this->_uploadImage();
         $this->konten = $post["konten"];
-		$this->kategori = $post["kategori"];
+        $this->kategori = $post["kategori"];
+        $this->date = date('Y-m-d');;
         $this->db->insert($this->_table, $this);
     }
 
@@ -98,7 +100,7 @@ class M_post extends CI_Model{
 		$this->load->library('upload', $config);
 
 		if ( ! $this->upload->do_upload('image')) {
-            return $this->upload->display_errors();
+            return "default.jpg";
 		}else {
             
 			return $this->upload->data("file_name");

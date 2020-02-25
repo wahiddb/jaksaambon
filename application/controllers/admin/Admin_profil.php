@@ -10,7 +10,8 @@ class Admin_profil extends CI_Controller{
  
     function index(){
         if($this->session->userdata('level')==='1'){
-			$data["profil"] = $this->m_post->getAll();
+			$query = $this->db->query('SELECT * FROM post WHERE kategori = "Adyaksa Dharmakarin"'); 
+            $data['profil'] = $query->result();
         }
         
         $this->template_admin->load('/admin/template_admin', '/admin/profiljaksa', $data);

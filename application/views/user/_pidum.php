@@ -67,6 +67,12 @@
                                       <th>
                                           <center>Tersangka</center>
                                       </th>
+                                        <th>
+                                        <center>Jadwal Sidang</center>
+                                        </th>
+                                        <th>
+                                        <center>Agenda</center>
+                                        </th>
                                       <th>
                                           <center>Status</center>
                                       </th>
@@ -90,6 +96,12 @@
                                           </td>
                                           <td>
                                               <center><?= $data['tersangka']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['jadwal']; ?></center>
+                                          </td>
+                                          <td>
+                                              <center><?= $data['agenda']; ?></center>
                                           </td>
                                           <td>
                                               <center><?= $data['status']; ?></center>

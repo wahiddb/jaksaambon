@@ -7,6 +7,8 @@ class M_pidum extends CI_Model
     public $nomor_perkara;
     public $pasal;
     public $tersangka;
+    public $jadwal;
+    public $agenda;
     public $status;
     public $keterangan;
 
@@ -23,6 +25,16 @@ class M_pidum extends CI_Model
             
             ['field' => 'tersangka',
             'label' => 'tersangka',
+            'rules' => 'required'],
+
+            
+            ['field' => 'jadwal',
+            'label' => 'jadwal',
+            'rules' => 'required'],
+
+            
+            ['field' => 'agenda',
+            'label' => 'agenda',
             'rules' => 'required'],
 
             ['field' => 'status',
@@ -53,6 +65,8 @@ class M_pidum extends CI_Model
         $this->nomor_perkara = $post["no_perkara"];
         $this->pasal = $post["pasal"];
         $this->tersangka = $post["tersangka"];
+        $this->jadwal = $post["jadwal"];
+        $this->agenda = $post["agenda"];
         $this->status = $post["status"];
         $this->keterangan = $post["keterangan"];
         return $this->db->insert($this->_table, $this);
@@ -65,6 +79,8 @@ class M_pidum extends CI_Model
         $this->nomor_perkara = $post["no_perkara"];
         $this->pasal = $post["pasal"];
         $this->tersangka = $post["tersangka"];
+        $this->jadwal = $post["jadwal"];
+        $this->agenda = $post["agenda"];
         $this->status = $post["status"];
         $this->keterangan = $post["keterangan"];
         return $this->db->update($this->_table, $this, array('id_pidum' => $post['id']));

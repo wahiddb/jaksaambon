@@ -46,6 +46,12 @@
                           <center>Tersangka</center>
                         </th>
                         <th>
+                          <center>Jadwal Sidang</center>
+                        </th>
+                        <th>
+                          <center>Agenda</center>
+                        </th>
+                        <th>
                           <center>Status</center>
                         </th>
                         <th>
@@ -63,6 +69,8 @@
                                 <td style="text-align:center;"><?php echo $pidum->nomor_perkara ?></td>
                                 <td style="text-align:center;"><?php echo $pidum->pasal ?></td>
                                 <td style="text-align:center;"><?php echo $pidum->tersangka ?></td>
+                                <td style="text-align:center;"><?php echo $pidum->jadwal ?></td>
+                                <td style="text-align:center;"><?php echo $pidum->agenda ?></td>
                                 <td style="text-align:center;"><?php echo $pidum->status ?></td>
                                 <td style="text-align:center;"><?php echo $pidum->keterangan ?></td>
                                 <td style="text-align:center;">

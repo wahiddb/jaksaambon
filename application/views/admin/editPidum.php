@@ -56,6 +56,25 @@
                         </div>
                     </div>
 
+
+                    <div class="form-group">
+                        <label for="jadwal">Jadwal Sidang*</label>
+                        <input class="form-control <?php echo form_error('jadwal') ? 'is-invalid':'' ?>"
+                        type="text" name="jadwal" placeholder="Jadwal Sidang" />
+                        <div class="invalid-feedback">
+                            <?php echo form_error('jadwal') ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="agenda">Agenda*</label>
+                        <input class="form-control <?php echo form_error('agenda') ? 'is-invalid':'' ?>"
+                        type="text" name="agenda" placeholder="Agenda" />
+                        <div class="invalid-feedback">
+                            <?php echo form_error('agenda') ?>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="status">Status*</label>
                         <input class="form-control <?php echo form_error('status') ? 'is-invalid':'' ?>"
